@@ -7,15 +7,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Hohohot</a>
+                <a class="navbar-brand" href="/">MyLittlePoney</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav d-inline">
                     <li class="nav-item pl-2">
-                        <a class="nav-link" href="/user">Liste des utilisateurs</a>
+                        <a class="nav-link" href="/joueur">Liste des utilisateurs</a>
                     </li>
                     <li class="nav-item ml-2">
-                        <a class="nav-link" href="/user/profil/19">Profil</a>
+                        <a class="nav-link" href="/joueur/profil/19">Profil</a>
                     </li>
                 </ul>
             </div>

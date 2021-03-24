@@ -6,7 +6,7 @@ class Db extends PDO
     private static $instance;
 
     const DB_HOSTNAME = "localhost";
-    const DB_NAME = "hothothot";
+    const DB_NAME = "mylittleponey";
     const DB_USERNAME = "root";
     const DB_PASSWORD = "";
 
