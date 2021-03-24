@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="Fix connection">
+      <change afterPath="$PROJECT_DIR$/Controllers/DefaultController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/main/default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ConnectionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/DefaultController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/LogoutController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ProfilController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/TemperatureController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/TokenController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/AutoLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/AutoLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Constant.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/connexionDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/script_database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Temperature.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Token.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/ws.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/DefaultView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/include/BodyView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/include/FooterView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/include/HeaderView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/temperature/ShowView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/LoginView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/ProfilView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/RegisterView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/verifyTokenView.php" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mxdaPOW2fgkuCBpzY1QNXX0Mc4" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique" />
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\Core" />
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\view\user" />
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\model" />
+      <recent name="D:\Programmes\Wamp\www\Hohohot_Dynamique\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\Core" />
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\Models" />
+      <recent name="C:\Serveurs\wamp64\www\Hohohot_Dynamique\Views\main" />
+      <recent name="E:\Users\ALEXIS\PhpstormProjects\Hohohot" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="new version">
+      <created>1610438452850</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610438452851</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new version">
+      <created>1610438501773</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610438501773</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="new version" />
+      <created>1610439238184</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610439238184</updated>
+      <workItem from="1610439239335" duration="2419000" />
+      <workItem from="1610442074016" duration="3534000" />
+      <workItem from="1611040534026" duration="13627000" />
+      <workItem from="1611213521241" duration="2312000" />
+      <workItem from="1612855329909" duration="31000" />
+      <workItem from="1612855417725" duration="2428000" />
+      <workItem from="1613028279495" duration="14307000" />
+      <workItem from="1613461506459" duration="71000" />
+      <workItem from="1613461585471" duration="11015000" />
+      <workItem from="1615499717981" duration="4425000" />
+      <workItem from="1615504192585" duration="127000" />
+      <workItem from="1615548130218" duration="9484000" />
+      <workItem from="1615572077104" duration="710000" />
+      <workItem from="1615589109783" duration="811000" />
+      <workItem from="1615595698631" duration="1201000" />
+      <workItem from="1615643106807" duration="901000" />
+      <workItem from="1616524088315" duration="2335000" />
+      <workItem from="1616579714367" duration="5140000" />
+      <workItem from="1616585298465" duration="40000" />
+      <workItem from="1616585352182" duration="9000" />
+      <workItem from="1616585363093" duration="6965000" />
+    </task>
+    <task id="LOCAL-00003" summary="db_connection.php">
+      <created>1610449504551</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610449504551</updated>
+    </task>
+    <task id="LOCAL-00004" summary="db_connection.php">
+      <created>1611044882143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611044882143</updated>
+    </task>
+    <task id="LOCAL-00005" summary="config">
+      <created>1611045845337</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611045845337</updated>
+    </task>
+    <task id="LOCAL-00006" summary="config">
+      <created>1611045946008</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611045946008</updated>
+    </task>
+    <task id="LOCAL-00007" summary="config">
+      <created>1611046445454</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611046445454</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create database + check connection">
+      <created>1611050866341</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611050866341</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create table">
+      <created>1611052760243</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611052760243</updated>
+    </task>
+    <task id="LOCAL-00010" summary="create table">
+      <created>1611052821217</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611052821217</updated>
+    </task>
+    <task id="LOCAL-00011" summary="create table">
+      <created>1611052829747</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1611052829747</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".gitingore">
+      <created>1611052885885</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611052885885</updated>
+    </task>
+    <task id="LOCAL-00013" summary="create documentation table">
+      <created>1611053444125</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611053444125</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Script create database + table">
+      <created>1611053836140</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1611053836140</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Create database">
+      <created>1611215436547</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1611215436547</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Create database + table">
+      <created>1611215647757</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1611215647757</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adding a sign-in view">
+      <created>1611217173743</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1611217173743</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Inscription, Connexion, redirection, temperature">
+      <created>1613039266308</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1613039266308</updated>
+    </task>
+    <task id="LOCAL-00019" summary="hash password register">
+      <created>1613465367889</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1613465367889</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Connexion">
+      <created>1613468244208</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1613468244208</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Logout">
+      <created>1613471345233</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1613471345233</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fix connection">
+      <created>1613472323897</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1613472323897</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fix connection">
+      <created>1613472997417</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1613472997417</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fix connection">
+      <created>1613473466593</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1613473466593</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Fix connection">
+      <created>1615643353010</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1615643353010</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new version" />
+    <MESSAGE value="db_connection.php" />
+    <MESSAGE value="config" />
+    <MESSAGE value="create database + check connection" />
+    <MESSAGE value="create table" />
+    <MESSAGE value=".gitingore" />
+    <MESSAGE value="create documentation table" />
+    <MESSAGE value="Script create database + table" />
+    <MESSAGE value="Create database" />
+    <MESSAGE value="Create database + table" />
+    <MESSAGE value="adding a sign-in view" />
+    <MESSAGE value="Script_database.php" />
+    <MESSAGE value="Inscription, Connexion, redirection, temperature" />
+    <MESSAGE value="hash password register" />
+    <MESSAGE value="Connexion" />
+    <MESSAGE value="Logout" />
+    <MESSAGE value="Fix connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix connection" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

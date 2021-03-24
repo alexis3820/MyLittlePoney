@@ -1,0 +1,5 @@
+#start rewrite engine
+RewriteEngine On
+
+#rewrite url
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?ctrl=$1
