@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="Fix connection" />
+=======
+    <list default="true" id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="Fix connection">
+      <change afterPath="$PROJECT_DIR$/Core/Generator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +135,12 @@
       <workItem from="1616585298465" duration="40000" />
       <workItem from="1616585352182" duration="9000" />
       <workItem from="1616585363093" duration="6965000" />
+<<<<<<< Updated upstream
       <workItem from="1616598716672" duration="3593000" />
+=======
+      <workItem from="1616598161054" duration="1147000" />
+      <workItem from="1616763785177" duration="1689000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00003" summary="db_connection.php">
       <created>1610449504551</created>
