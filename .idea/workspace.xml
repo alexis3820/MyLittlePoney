@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="Fix connection">
-      <change afterPath="$PROJECT_DIR$/Controllers/JoueurController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/script_database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Joueur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/UserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/main/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/main/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/user/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/joueur/show.php" afterDir="false" />
-    </list>
+    <list default="true" id="fe04840f-3675-4673-b65b-038f106797ba" name="Default Changelist" comment="Fix connection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
