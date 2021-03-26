@@ -13,7 +13,6 @@ fclose($file);
 
    count($firstNames) is the LIMIT !
 */
-$nbLinesRequired = count($firstNames);
 
 $file = fopen('../assets/csv/patronymes.csv', 'r');
 $header = fgetcsv($file,'',',');
@@ -22,9 +21,6 @@ $lastNames = [];
 while (($line = fgetcsv($file,'',',')) !== FALSE) {
     $line_assoc = array_combine($header,$line);
     $lastNames[] = $line_assoc['patronyme'];
-    if($nbLinesRequired === count($lastNames)){
-        break;
-    }
 
 }
 fclose($file);
@@ -35,9 +31,6 @@ $addresses = [];
 while (($line = fgetcsv($file,'',';')) !== FALSE) {
     $line_assoc = array_combine($header,$line);
     $addresses[] = $line_assoc['Nom_commune'].','.$line_assoc['Code_postal'];
-    if($nbLinesRequired === count($addresses)){
-        break;
-    }
 
 }
 fclose($file);
@@ -46,8 +39,8 @@ $count = 0;
 $objective = 1000000;
 $finalData = [];
 while($count < $objective){
-    $randFirstName = $lastNames[rand(0,$nbLinesRequired)];
-    $randLastName = $firstNames[rand(0,$nbLinesRequired)];
+    $randFirstName = $lastNames[rand(0,count($firstNames))];
+    $randLastName = $firstNames[rand(0,count($lastNames))];
     $mail = str_replace(' ','',$randFirstName).'.'.str_replace(' ','',$randLastName).'@'.randomDNS().'.'.randomDNS();
     $pseudonyme = randomChars(rand(10,20));
     $mdp = randomChars(rand(10,20));
