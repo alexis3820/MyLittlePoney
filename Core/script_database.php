@@ -1,5 +1,5 @@
 <?php
-require 'DB.php';
+require 'Db.php';
 
 $_S_hostname = 'localhost';
 $_S_username = 'root';
@@ -7,7 +7,7 @@ $_S_password = '';
 $_S_dbname = 'mylittleponey';
 
 
-// Create Joueur
+// Create User
 $_SQL_table_Joueur = "CREATE TABLE `Joueur` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `pseudonyme` varchar(50) NOT NULL,
@@ -218,8 +218,8 @@ try {
 }
 
 if($successfull){
-    $db = DB::getInstance();
-    // Create table Joueur
+    $db = new Db($_S_dbname,$_S_username,$_S_password);
+    // Create table User
     try {
         // set the PDO error mode to exception
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -228,7 +228,7 @@ if($successfull){
         // $_SQL_table_degree
         // use exec() because np results are returned
         $db->exec($_SQL_table_Joueur);
-        echo "Table Joueur created successfully <br>";
+        echo "Table User created successfully <br>";
 
     } catch (PDOException $e){
         echo $e->getMessage() . "<br>";

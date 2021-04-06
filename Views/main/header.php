@@ -11,12 +11,21 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav d-inline">
-                    <li class="nav-item pl-2">
-                        <a class="nav-link" href="/joueur">Liste des utilisateurs</a>
-                    </li>
-                    <li class="nav-item ml-2">
-                        <a class="nav-link" href="/joueur/profil/19">Profil</a>
-                    </li>
+                    <?php if (isset($_SESSION['id'])) { ?>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="/panel/default" title="Panel">Panel</a>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="/user/profil" title="Profil">Profil</a>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="/user/logout" title="Déconnexion">Se déconnecter</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item ml-2">
+                            <a class="nav-link" href="/user/default" title="Login">Login</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

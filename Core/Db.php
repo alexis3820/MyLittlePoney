@@ -1,19 +1,14 @@
 <?php
-
-// Singleton
 class Db extends PDO
 {
-    private static $instance;
-
+    // salt password
+    const SALT_PASSWORD = "unSalt";
     const DB_HOSTNAME = "localhost";
-    const DB_NAME = "mylittleponey";
-    const DB_USERNAME = "root";
-    const DB_PASSWORD = "";
 
-    public function __construct(){
-        $_dsn = 'mysql:dbname='. self::DB_NAME . ';host=' . self::DB_HOSTNAME;
+    public function __construct($db_name,$db_username,$db_password){
+        $_dsn = 'mysql:dbname='. $db_name . ';host=' . self::DB_HOSTNAME;
         try {
-            parent::__construct($_dsn, self::DB_USERNAME, self::DB_PASSWORD);
+            parent::__construct($_dsn, $db_username, $db_password);
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
             //key value
             $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -24,10 +19,4 @@ class Db extends PDO
         }
     }
 
-    public static function getInstance(){
-        if(null === self::$instance){
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
 }

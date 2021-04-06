@@ -12,6 +12,8 @@ url = /user/profil/19
 
 $uri = $_SERVER['REQUEST_URI'];
 
+session_start();
+
 //if 'trailing slash' exist
 if(!empty($uri) && '/' != $uri && '/' === $uri[-1]){
     //remove slash and redirect to avoid duplicate content

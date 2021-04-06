@@ -2,14 +2,14 @@
 
 class Model
 {
-    private Db $db;
+    protected Db $db;
 
-    public function __construct(){
-        $this->db = Db::getInstance();
+    public function __construct($dbname,$user,$password){
+        $this->db = new Db($dbname,$user,$password);
     }
 
     // must be used in Model Class in repository Models to avoid useless instance declaration of DB
-    public function query($sql, ?array $values)
+    public function query($sql, array $values = null)
     {
         if(null !== $values){
             $query = $this->db->prepare($sql);
@@ -29,6 +29,19 @@ class Model
         }
 
         return $result->fetchAll();
+
+    }
+
+    public function getPasswordHash($plainPassword,$salt){
+        if(!empty($plainPassword)){
+            $passwordToEncrypt = $salt.$plainPassword;
+            $_SQL_getdata = "SELECT PASSWORD(:password)";
+            $query = $this->db->prepare($_SQL_getdata);
+            $query->execute([':password'=>$passwordToEncrypt]);
+            return $query->fetchColumn();
+        }else{
+            return $plainPassword;
+        }
 
     }
 

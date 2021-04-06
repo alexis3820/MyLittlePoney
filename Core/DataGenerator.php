@@ -1,6 +1,6 @@
 <?php
 
-$file = fopen('../asset/csv/Prenoms.csv', 'r');
+$file = fopen('../assets/csv/Prenoms.csv', 'r');
 $header = fgetcsv($file,'',';');
 $firstNames = [];
 while (($line = fgetcsv($file,'',';')) !== FALSE) {
@@ -10,7 +10,7 @@ while (($line = fgetcsv($file,'',';')) !== FALSE) {
 fclose($file);
 
 
-$file = fopen('../asset/csv/patronymes.csv', 'r');
+$file = fopen('../assets/csv/patronymes.csv', 'r');
 $header = fgetcsv($file,'',',');
 fgetcsv($file,'',','); // have to skip first line after header because she is ugly :S
 $lastNames = [];
@@ -21,7 +21,7 @@ while (($line = fgetcsv($file,'',',')) !== FALSE) {
 }
 fclose($file);
 
-$file = fopen('../asset/csv/adresses.csv', 'r');
+$file = fopen('../assets/csv/adresses.csv', 'r');
 $header = fgetcsv($file,'',';');
 $addresses = [];
 while (($line = fgetcsv($file,'',';')) !== FALSE) {
