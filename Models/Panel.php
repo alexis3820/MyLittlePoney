@@ -12,4 +12,9 @@ class Panel extends Model
         $_SQL_getdata = "SHOW TABLES FROM $database";
         return $this->query($_SQL_getdata,[]);
     }
+
+    public function getColumns($columnName){
+        $_SQL_getdata = "SHOW FULL COLUMNS FROM $columnName";
+        return $this->query($_SQL_getdata,[]);
+    }
 }

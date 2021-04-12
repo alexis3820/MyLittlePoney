@@ -22,23 +22,23 @@ if(isset($view['databases'])){
 if(isset($view['tables'])){
     ?>
     <section>
-        <table>
+        <table class="datatable datatable_spec table" id="table1">
             <thead>
             <tr>
-                <th colspan="2"><?php echo $view['current_database']; ?></th>
+                <th><?php echo $view['current_database']; ?></th>
             </tr>
-            </thead>
             <tbody>
-            <tr>
                 <?php
                 foreach ($view['tables'] as $table){
                     foreach ($table as $value){ ?>
-                        <td><?php echo $value; ?></td>
+                        <tr>
+                        <td><a href="/panel/table/<?php echo $value; ?>"><?php echo $value; ?></a></td>
+            </tr>
                         <?php
                     }
                 }
                 ?>
-            </tr>
+
             </tbody>
         </table>
     </section>

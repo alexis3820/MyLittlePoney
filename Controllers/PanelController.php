@@ -24,7 +24,7 @@ final class PanelController{
     }
 
     public function databaseAction(){
-        if(isset($_SESSION['database'])){
+        if(isset($_SESSION['database']) || isset($_POST['selected_bdd'])){
             if(isset($_POST['selected_bdd'])){
                 $_SESSION['database'] = $_POST['selected_bdd'];
             }
@@ -37,13 +37,22 @@ final class PanelController{
                 'databases'=>$databases,
                 ]);
 
-        }else if(isset($_POST['selected_bdd'])){
-            $_SESSION['database'] = $_POST['selected_bdd'];
-            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
-            View::render('panel/interface',['tables'=>$tables,'database'=>$_SESSION['database']]);
         }else{
             header('Location: /panel/default');
         }
 
+    }
+
+    public function tableAction($parameters){
+        /* todo : in AJAX */
+        if(isset($parameters[0])){
+            $parameters[0] = htmlspecialchars($parameters[0]);
+            try {
+                $columns = $this->panel->getColumns($parameters[0]);
+                View::render('panel/table',['columns'=>$columns]);
+            }catch (Exception $e){
+                header('Location: /panel/default');
+            }
+        }
     }
 }
