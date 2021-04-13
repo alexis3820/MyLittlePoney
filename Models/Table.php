@@ -1,7 +1,7 @@
 <?php
 
 
-class Table
+class Table extends Model
 {
 
 }

@@ -43,16 +43,28 @@ final class PanelController{
 
     }
 
+
     public function tableAction($parameters){
+
         /* todo : in AJAX */
         if(isset($parameters[0])){
             $parameters[0] = htmlspecialchars($parameters[0]);
             try {
-                $columns = $this->panel->getColumns($parameters[0]);
-                View::render('panel/table',['columns'=>$columns]);
+
+                //$columns = $this->panel->getColumns($parameters[0]);
+                //View::render('panel/table',['columns'=>$columns]);
             }catch (Exception $e){
-                header('Location: /panel/default');
+                //header('Location: /panel/default');
             }
         }
     }
+    public function myTableAction(){
+        if(isset($_POST['getData'])) {
+            $table = $_POST['name'];
+            $sql = $this->panel->getTable($table);
+            var_dump($sql);
 }
+
+}
+}
+
