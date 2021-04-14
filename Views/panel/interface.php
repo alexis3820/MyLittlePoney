@@ -32,13 +32,12 @@ if(isset($view['tables'])){
                 foreach ($view['tables'] as $table){
                     foreach ($table as $value){ ?>
                         <tr>
-                        <td><button type="button" id="<?php echo $value; ?>" class="MyColumn"><?php echo $value; ?></button></td>
-            </tr>
+                            <td><button type="button" id="<?php echo $value; ?>" class="MyColumn"><?php echo $value; ?></button></td>
+                        </tr>
                         <?php
                     }
                 }
                 ?>
-
             </tbody>
         </table>
     </section>

@@ -43,7 +43,6 @@ final class PanelController{
 
     }
 
-
     public function tableAction($parameters){
 
         /* todo : in AJAX */
@@ -51,10 +50,10 @@ final class PanelController{
             $parameters[0] = htmlspecialchars($parameters[0]);
             try {
 
-                //$columns = $this->panel->getColumns($parameters[0]);
-                //View::render('panel/table',['columns'=>$columns]);
+                $columns = $this->panel->getColumns($parameters[0]);
+                View::render('panel/table',['columns'=>$columns]);
             }catch (Exception $e){
-                //header('Location: /panel/default');
+                header('Location: /panel/default');
             }
         }
     }
