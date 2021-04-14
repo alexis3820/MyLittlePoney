@@ -19,6 +19,9 @@
                             <a class="nav-link" href="/user/profil" title="Profil">Profil</a>
                         </li>
                         <li class="nav-item ml-2">
+                            <a class="nav-link" href="/generateBdd" title="GenerateDatabase">Générer la base de donnée</a>
+                        </li>
+                        <li class="nav-item ml-2">
                             <a class="nav-link" href="/user/logout" title="Déconnexion">Se déconnecter</a>
                         </li>
                     <?php } else { ?>
