@@ -1,6 +1,6 @@
 $(document).ready(function() {
    $('#table1').DataTable({
-      bPaginate: true,
+      bPaginate: false,
       dom: 'Bfrtip',
       buttons: [
          'copy',
