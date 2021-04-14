@@ -19,10 +19,17 @@ final class GeneratorController
         View::render('generateBdd/home', ['success' => $success, 'res' => $res]);
     }
 
-    public function createAction()
+    public function createBddAction()
     {
         $success = false;
         require 'Core/script_database.php';
+        View::render('generateBdd/home', ['success' => $success]);
+    }
+
+    public function createUserAction()
+    {
+        $success = false;
+        require 'Core/create_user.php';
         View::render('generateBdd/home', ['success' => $success]);
     }
 }
