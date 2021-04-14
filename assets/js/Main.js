@@ -38,11 +38,11 @@ $(document).ready(function() {
          },
          success:
             function(){
-            console.log(name);
+             console.log(name);
             },
          error:
             function(){
-            console.log('error AJAX');
+               console.log('error AJAX');
             }
       })
    });

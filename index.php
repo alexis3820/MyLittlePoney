@@ -2,7 +2,10 @@
 /* ===== Entrypoint (rooter) ===== */
 
 require 'Core/Autoloader.php';
+// require 'Core/DataGenerator.php';
 
+// $arg = new DataGenerator();
+// $arg->_InsertData(10);
 
 /*
 url = /user/profil/19

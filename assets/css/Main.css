@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  display: flex;
+  flex-direction: row;
+  font-family: "Poppins" !important;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  background-color: #474459;
+  height: 100vh;
+  width: 300px;
+}
+
+a {
+  text-decoration: none;
+  color: white 1 !important;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:focus {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar:active {
+  color: white;
+}
+
+.logo-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 25px;
+}
+
+.logo-accueil {
+  color: white;
+  text-decoration: none;
+}
+
+#link-pages {
+  margin-top: 5vh;
+}
+
+#link-pages div a {
+  margin: 15px 5px;
+  display: flex;
+  align-items: center;
+}
+
+#link-pages div {
+  border-top: solid 2px white;
+  display: flex;
+  align-items: center;
+}
+
+#link-pages div a img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+#link-pages > div:last-child {
+  border-bottom: solid 2px white;
+}
+
+#settings-links {
+  margin-top: 5vh;
+}
+
+#settings-links div {
+  display: flex;
+  align-items: center;
+}
+
+#settings-links div a {
+  margin: 10px 5px;
+  display: flex;
+  align-items: center;
+}
+
+#container {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ededed;
+}
+
+#container > div {
+  width: 98%;
+  height: 98%;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  box-shadow: 1px 0px 33px -2px rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: 1px 0px 33px -2px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 1px 0px 33px -2px rgba(0, 0, 0, 0.32);
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+
+.row.green {
+  background: #27ae60;
+}
+
+.row.blue {
+  background: #2980b9;
+}
+
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 14px 0 7px;
+    display: block;
+  }
+  .row.header {
+    padding: 0;
+    height: 6px;
+  }
+  .row.header .cell {
+    display: none;
+  }
+  .row .cell {
+    margin-bottom: 10px;
+  }
+  .row .cell:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 16px;
+    display: block;
+  }
+}
+
+.cell .view-button {
+  font-size: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px black;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 1px 1vw;
+  mix-blend-mode: multiply;
+  background-color: #0372e8;
+  color: #000;
+  mix-blend-mode: multiply;
+  height: 25px;
+  opacity: 0.9;
+}
+
+.cell .view-button:hover {
+  background: #507bbd;
+  color: rgba(216, 168, 94, 0.708);
+  border: 2px solid #0759c6;
+}
+
+.cell .edit-button {
+  font-size: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px black;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 1px 1vw;
+  mix-blend-mode: multiply;
+  background-color: #de8c11;
+  color: #000;
+  mix-blend-mode: multiply;
+  height: 25px;
+  opacity: 0.9;
+}
+
+.cell .edit-button:hover {
+  background: #d5a255;
+  color: rgba(216, 168, 94, 0.708);
+  border: 2px solid #e39b00;
+}
+
+.cell .delete-button {
+  font-size: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px black;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 1px 1vw;
+  mix-blend-mode: multiply;
+  background-color: #e9392c;
+  color: #000;
+  mix-blend-mode: multiply;
+  height: 25px;
+  opacity: 0.9;
+}
+
+.cell .delete-button:hover {
+  background: #eba1a1;
+  color: #eba1a1;
+  border: 2px solid #e64747;
+}
+
+.cell a img {
+  width: 15px;
+}
+
+
+

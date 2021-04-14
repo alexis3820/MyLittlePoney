@@ -9,8 +9,10 @@ if(isset($view['tables'])){
             </tr>
             <tbody>
             <?php
-            foreach ($view['columns'] as $column){
-                foreach ($column as $value){ ?>
+            foreach ($view['columns'] as $column) {
+                foreach ($column as $value) { 
+                    print_r($value);
+                    ?>
                     <tr>
                         <td><?php echo $value; ?></td>
                     </tr>
