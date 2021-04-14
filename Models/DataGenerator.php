@@ -6,10 +6,17 @@ class DataGenerator
 {
     /*________________________________________________________________________________________________________________*/
     public $db;
-
+    public $success;
     public function __construct()
     {
-        $this->db = new Db('mylittleponey', 'root', '');
+        try
+        {
+            $this->db = new Db('mylittleponey', 'root', '');
+            $this->success = true;
+        }catch(Exception $exception)
+        {
+            $this->success = false;
+        }
     }
 
     public function _InsertData($NumberLigne)
@@ -46,6 +53,7 @@ class DataGenerator
             $this->_Transaction();
             $count++;
         }
+        return $this->success;
     }
 
     /*________________________________________________________________________________________________________________*/
