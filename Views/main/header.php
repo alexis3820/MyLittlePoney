@@ -10,7 +10,7 @@
             </div>
             <div id="settings-links">
                 <div><a href="/user/profil">Profil</a></div>
-                <div><a href="/generateBdd">Generer BD</a></div>
+                <div><a href="/generator/default">Generer BD</a></div>
                 <div><a href="/user/logout">Deconnexion</a></div>
             </div>
         <?php } else { ?>
