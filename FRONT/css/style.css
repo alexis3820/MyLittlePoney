@@ -18,12 +18,12 @@ header {
   height: 10vh;
   background-color: #474459;
   height: 100vh;
-  width: 300px;
+  width: 280px;
 }
 
 a {
   text-decoration: none;
-  color: white 1 !important;
+  color: white !important;
 }
 
 a:visited {
