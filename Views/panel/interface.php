@@ -37,9 +37,9 @@ if(isset($view['tables'])){
                                 <p><?php echo $value; ?></p>
                             </td>
                             <td>
-                                <button type="button" id="<?php echo $value; ?>" class="View">Voir</button>
-                                <button type="button" id="<?php echo $value; ?>" class="Edit">Editer</button>
-                                <button type="button" id="<?php echo $value; ?>" class="Delete">Supprimer</button>
+                                <button type="button" id="<?php echo $value; ?>" class="View btn btn-info glyphicon glyphicon-eye-open btn-xs" data-toggle="modal" data-target="#modalView"></button>
+                                <button type="button" id="<?php echo $value; ?>" class="Edit btn btn-warning glyphicon glyphicon-pencil btn-xs"></button>
+                                <button type="button" id="<?php echo $value; ?>" class="Delete btn btn-danger glyphicon glyphicon-remove btn-xs"></button>
                             </td>
                         </tr>
                         <?php
@@ -49,6 +49,29 @@ if(isset($view['tables'])){
             </tbody>
         </table>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <?php
 }
 ?>
