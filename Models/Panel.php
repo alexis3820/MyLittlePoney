@@ -19,7 +19,7 @@ class Panel extends Model
     }
 
     public function getTable($table){
-        $select = "SELECT * FROM $table;";
+        $select = "SELECT * FROM $table";
         return $this->query($select,[]);
     }
 }

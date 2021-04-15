@@ -7,11 +7,27 @@ final class PanelController{
 
     public function __construct(){
         $password = '';
+        $instantiate = false;
         if(!empty($_SESSION['password'])){
             $password = Db::SALT_PASSWORD.$_SESSION['password'];
         }
 
-        $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$password);
+        foreach ($_SESSION['databases'] as $database){
+            if(self::DB_NAME === $database){
+                $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$password);
+                $instantiate = true;
+                break;
+            }
+        }
+
+        if(!$instantiate){
+            if(isset($_SESSION['databases'][0])){
+                $this->panel = new Panel($_SESSION['databases'][0],$_SESSION['id'],$password);
+            }else{
+                $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$password);
+            }
+        }
+
     }
 
     public function defaultAction(){
@@ -35,7 +51,7 @@ final class PanelController{
                 'current_database'=>$_SESSION['database'],
                 'tables'=>$tables,
                 'databases'=>$databases,
-                ]);
+            ]);
 
         }else{
             header('Location: /panel/default');
@@ -44,7 +60,6 @@ final class PanelController{
     }
 
     public function tableAction($parameters){
-
         /* todo : in AJAX */
         if(isset($parameters[0])){
             $parameters[0] = htmlspecialchars($parameters[0]);
@@ -56,14 +71,20 @@ final class PanelController{
                 header('Location: /panel/default');
             }
         }
+
     }
+
+    public function deleteTableAction(){
+
+    }
+
     public function myTableAction(){
-        if(isset($_POST['getData'])) {
+        if(isset($_POST['getData'])){
             $table = $_POST['name'];
             $sql = $this->panel->getTable($table);
-            var_dump($sql);
-}
+            var_dump($sql);die;
+        }
 
-}
+    }
 }
 

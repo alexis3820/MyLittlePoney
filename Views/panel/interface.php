@@ -1,64 +1,51 @@
-
-
-<section id="interface">
-    <div>
-        <?php
-        if (isset($view['databases'])) {
-            ?>
-            <form class="select-dropdown" action="/panel/database" method="post">
-                <label for="selected_bdd">Choisir BD :</label>
-                <select id="slct" name="selected_bdd">
-                    <?php
-                    foreach ($view['databases'] as $database) {
-                        foreach ($database as $value) { ?>
-                            <option selected><?php echo $value; ?></option>
-                            <?php
-                        }
-                    }
-                    ?>
-                </select>
-                <input id="choisir" type="submit" name="submit_bdd" value="Choisir">
-            </form>
+<?php
+if(isset($view['databases'])){
+    ?>
+    <form action="/panel/database" method="post">
+        <label for="selected_bdd">Choisir une base de données :</label>
+        <select class="form-select mt-1 mb-2" name="selected_bdd">
             <?php
-        }
-        ?>
-        <?php
-        if (isset($view['tables'])) {
-            ?>
-            <section>
-                <div class="table">
-                    <div class="ligne header">
-                        <div class="cellule">
-                            <?php echo $view['current_database']; ?>
-                        </div>
-                        <div class="cellule">
-                            Actions
-                        </div>
-                    </div>
-
+            foreach ($view['databases'] as $database){
+                foreach ($database as $value){ ?>
+                    <option selected><?php echo $value; ?></option>
                     <?php
-                    foreach ($view['tables'] as $table) { ?>
-                        <div class="ligne">
-                            <?php foreach ($table as $value) { ?>
-                                <div class="cellule"><?php echo $value; ?></div>
-                                <div class="cellule" data-title="Actions">
-                                    <button class="view-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
-                                    <button class="edit-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
-                                    <button class="delete-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
-                                </div>
-                                <?php
-                            } ?>
-                        </div>
+                }
+            }
+            ?>
+        </select>
+        <input type="submit" name="submit_bdd" value="Choisir">
+    </form>
+    <?php
+}
+?>
+<?php
+if(isset($view['tables'])){
+    ?>
+    <section>
+        <table class="table table-striped" id="table1">
+            <thead>
+            <tr>
+                <th><?php echo $view['current_database']; ?></th>
+            </tr>
+            <tbody>
+                <?php
+                foreach ($view['tables'] as $table){
+                    foreach ($table as $value){ ?>
+                        <tr>
+                            <td>
+                                <p><?php echo $value; ?></p>
+                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Voir</button>
+                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Editer</button>
+                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Supprimer</button>
+                            </td>
+                        </tr>
                         <?php
                     }
-                    ?>
-
-                </div>
-            </section>
-            <?php
-        }
-        ?>
-<!-- <div></div> -->
-    </div>
-</section>
-
+                }
+                ?>
+            </tbody>
+        </table>
+    </section>
+<?php
+}
+?>

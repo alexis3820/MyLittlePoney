@@ -23,10 +23,12 @@ final class UserController
             //be sure that when creating a user, the salt is the same as below
             $password = $this->user->getPasswordHash($_POST['password'],Db::SALT_PASSWORD);
             $information = $this->user->getUser($_POST['name'],$password);
+            $databases = $this->user->getDatabaseUser($_POST['name']);
             if(false !== $information && isset($information[0])){
                 header('Location: /user/profil');
                 $_SESSION['id'] = $information[0]['User'];
                 $_SESSION['password'] = $_POST['password'];
+                $_SESSION['databases'] = $databases;
             }else{
                 View::render('user/login');
                 echo "Identifiants incorrect veuillez réesayer";
