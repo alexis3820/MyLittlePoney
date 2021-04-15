@@ -38,7 +38,7 @@ if(isset($view['tables'])){
                             </td>
                             <td>
                                 <button type="button" id="<?php echo $value; ?>" class="View btn btn-info glyphicon glyphicon-eye-open btn-xs" data-toggle="modal" data-target="#modalView"></button>
-                                <button type="button" id="<?php echo $value; ?>" class="Edit btn btn-warning glyphicon glyphicon-pencil btn-xs"></button>
+                                <button type="button" id="<?php echo $value; ?>" class="Edit btn btn-warning glyphicon glyphicon-pencil btn-xs" data-toggle="modal" data-target="#modalEdit"></button>
                                 <button type="button" id="<?php echo $value; ?>" class="Delete btn btn-danger glyphicon glyphicon-remove btn-xs"></button>
                             </td>
                         </tr>
@@ -59,10 +59,8 @@ if(isset($view['tables'])){
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </h5>
-
                 </div>
                 <div class="modal-body">
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -71,6 +69,24 @@ if(isset($view['tables'])){
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <?php
 }
