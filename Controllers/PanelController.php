@@ -85,9 +85,10 @@ final class PanelController{
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
             $sql = $this->panel->getTable($table);
+            $TEST = '';
+
             foreach($sql as $value){
                 foreach($value as $data => $key){
-                    $TEST = '';
                     $TEST .= '<div>Mes colonnes : '. $key .'</div>';
                     $TEST .= '<div>Mes data : ' . $data .'</div>';
                 }
