@@ -78,7 +78,6 @@ final class PanelController{
         if(isset($_POST['getDelete'])){
             $table = $_POST['name'];
             $sql = $this->panel->getDelete($table);
-            var_dump($sql);
         }
     }
 
@@ -86,9 +85,18 @@ final class PanelController{
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
             $sql = $this->panel->getTable($table);
-            var_dump($sql);
-        }
+            foreach($sql as $value){
+                foreach($value as $data => $key){
+                    $TEST = '';
+                    $TEST .= '<div>Mes colonnes : '. $key .'</div>';
+                    $TEST .= '<div>Mes data : ' . $data .'</div>';
+                }
+            }
 
+            $ARRAY['JSONTEST'] = utf8_encode($TEST);
+
+            echo json_encode($ARRAY);
+        }
     }
 }
 

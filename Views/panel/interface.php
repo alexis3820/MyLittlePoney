@@ -22,10 +22,10 @@ if(isset($view['databases'])){
 if(isset($view['tables'])){
     ?>
     <section>
-        <table class="table table-striped" id="table1">
+        <table id="table1" class="table table-striped table-bordered">
             <thead>
             <tr>
-                <th><?php echo $view['current_database']; ?></th>
+                <th>Nom</th>
                 <th>Gestion</th>
             </tr>
             <tbody>
@@ -61,11 +61,10 @@ if(isset($view['tables'])){
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    TOTO
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
