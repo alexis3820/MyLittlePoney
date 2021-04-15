@@ -22,4 +22,9 @@ class Panel extends Model
         $select = "SELECT * FROM $table";
         return $this->query($select,[]);
     }
+
+    public function getDelete($table){
+        $delete = "DROP TABLE $table";
+        return $this->query($delete,[]);
+    }
 }

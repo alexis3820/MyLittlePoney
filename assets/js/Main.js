@@ -26,7 +26,7 @@ $(document).ready(function() {
 
    });
 
-   $('.MyColumn').click(function() {
+   $('.View').click(function() {
       var name = $(this).attr('id');
 
       $.ajax({
@@ -37,14 +37,34 @@ $(document).ready(function() {
             name: name
          },
          success:
-             function(data){
-                data = $.parseJSON(data);
-                console.log(data);
+             function(){
+                console.log('OK');
              },
          error:
             function(){
             console.log('error AJAX');
             }
+      })
+   });
+
+   $('.Delete').click(function() {
+      var name = $(this).attr('id');
+
+      $.ajax({
+         url: '/Panel/deleteTable',
+         type: 'POST',
+         data: {
+            getDelete: true,
+            name: name
+         },
+         success:
+             function(){
+                console.log('OK');
+             },
+         error:
+             function(){
+                console.log('error AJAX');
+             }
       })
    });
 });

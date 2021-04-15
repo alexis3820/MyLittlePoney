@@ -26,6 +26,7 @@ if(isset($view['tables'])){
             <thead>
             <tr>
                 <th><?php echo $view['current_database']; ?></th>
+                <th>Gestion</th>
             </tr>
             <tbody>
                 <?php
@@ -34,9 +35,11 @@ if(isset($view['tables'])){
                         <tr>
                             <td>
                                 <p><?php echo $value; ?></p>
-                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Voir</button>
-                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Editer</button>
-                                <button type="button" id="<?php echo $value; ?>" class="MyColumn">Supprimer</button>
+                            </td>
+                            <td>
+                                <button type="button" id="<?php echo $value; ?>" class="View">Voir</button>
+                                <button type="button" id="<?php echo $value; ?>" class="Edit">Editer</button>
+                                <button type="button" id="<?php echo $value; ?>" class="Delete">Supprimer</button>
                             </td>
                         </tr>
                         <?php
