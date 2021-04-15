@@ -19,7 +19,9 @@ $(document).ready(function() {
          },
          success:
              function(data){
-                console.log(data);
+                data = $.parseJSON(data);
+                $('.modal-body').html(data.JSONTEST);
+                $('.modal-title').html(name);
              },
          error:
             function(){
