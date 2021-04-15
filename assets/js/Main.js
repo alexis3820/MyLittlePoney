@@ -39,8 +39,8 @@ $(document).ready(function() {
             name: name
          },
          success:
-             function(){
-                console.log('OK');
+             function(data){
+                console.log(data);
              },
          error:
              function(){
