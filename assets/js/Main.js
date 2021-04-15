@@ -37,8 +37,9 @@ $(document).ready(function() {
             name: name
          },
          success:
-            function(){
-             console.log(name);
+            function(data){
+               data = $.parseJSON(data);
+             console.log(data);
             },
          error:
             function(){

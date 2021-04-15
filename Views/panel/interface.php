@@ -1,3 +1,5 @@
+
+
 <section id="interface">
     <div>
         <?php
@@ -38,11 +40,11 @@
                     foreach ($view['tables'] as $table) { ?>
                         <div class="ligne">
                             <?php foreach ($table as $value) { ?>
-                                <div class="cellule"><button type="button" id="<?php echo $value; ?>" class="MyColumn"><?php echo $value; ?></button></div>
+                                <div class="cellule"><?php echo $value; ?></div>
                                 <div class="cellule" data-title="Actions">
-                                    <a class="view-button" href=""><img src="../assets/img/eye.svg" alt="view icon"></a>
-                                    <a class="edit-button" href=""><img src="../assets/img/edit.svg" alt="edit icon"></a>
-                                    <a class="delete-button" href=""><img src="../assets/img/trash.svg" alt="delete icon"></a>
+                                    <button class="view-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
+                                    <button class="edit-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
+                                    <button class="delete-button MyColumn glyphicon glyphicon-asterisk" type="button" id="<?php echo $value; ?>" ></button>
                                 </div>
                                 <?php
                             } ?>
@@ -59,3 +61,4 @@
 <!-- <div></div> -->
     </div>
 </section>
+
