@@ -82,8 +82,9 @@ if(isset($view['tables'])){
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="precButton btn btn-info disabled" >Précédent</button>
-                    <button type="button" class="nextButton btn btn-info" >Suivant</button>
+                    <div class="ButtonClass">
+
+                    </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>

@@ -28,6 +28,7 @@ $(document).ready(function() {
                  $('.modal-title-view').html(name);
                 $('.DataTr').html(data.HTMLHEAD);
                 $('.DataTd').html(data.HTMLBODY);
+                $('.ButtonClass').html(data.NEXTBUTTON);
                  $('#editTable').dataTable( {
                      paging: false,
                      searching: true,
