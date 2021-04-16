@@ -12,12 +12,23 @@ class Model
     public function query($sql, array $values = null)
     {
         if(null !== $values){
-            $query = $this->db->prepare($sql);
-            $query->execute($values);
-            return $query->fetchAll();
+            try {
+                $query = $this->db->prepare($sql);
+                $query->execute($values);
+                return $query->fetchAll();
+            }catch (Exception $e){
+//                echo $e->getMessage();
+            }
+
         }else{
-            return $this->db->query($sql);
+            try {
+                return $this->db->query($sql);
+            }catch (Exception $e){
+//                echo $e->getMessage();
+            }
         }
+
+        return null;
     }
 
     // Just a generic SQL request (ideally put generic requests in this Class)
@@ -43,6 +54,19 @@ class Model
             return $plainPassword;
         }
 
+    }
+
+    public function updateTable($old,$new): bool
+    {
+        try{
+            $_SQL_editData = "ALTER TABLE $old RENAME TO $new";
+            $query = $this->db->prepare($_SQL_editData);
+            $query->execute();
+            return true;
+        }catch(Exception $e){
+//            echo $e->getMessage();
+            return false;
+        }
     }
 
 }

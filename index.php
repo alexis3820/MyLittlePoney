@@ -42,6 +42,7 @@ $excludeActions =
     [
         'myTable',
         'delete',
+        'getTableName',
     ];
 if(!in_array($action,$excludeActions)){
     View::openBuffer();

@@ -24,7 +24,7 @@ $(document).ready(function() {
                 console.log(data);
                 $('.DataTr').html(data.HTMLHEAD);
                 $('.DataTd').html(data.HTMLBODY);
-                $('.modal-title').html(name);
+                $('.modal-title-view').html(name);
              },
          error:
             function(){
@@ -32,6 +32,29 @@ $(document).ready(function() {
             }
       })
    });
+
+   $('.Edit').click(function() {
+      var name = $(this).attr('id');
+
+      $.ajax({
+         url: '/Panel/getTableName',
+         type: 'POST',
+         data: {
+            getData: true,
+            name: name
+         },
+         success:
+             function(data){
+                $("#newTable").val(data);
+                $("#oldTable").val(data);
+             },
+         error:
+             function(){
+                console.log('error AJAX');
+             }
+      })
+   });
+
 
    $('.Delete').click(function() {
       var name = $(this).attr('id');

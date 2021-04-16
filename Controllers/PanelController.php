@@ -84,12 +84,10 @@ final class PanelController{
     public function myTableAction(){
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
-            $sql = $this->panel->getTable($table);
+            $sql = $this->panel->getTableContent($table);
             $htmlHead = '';
             $htmlBody = '';
 
-            var_dump($sql);
-            die();
             foreach($sql as $value){
                 foreach($value as $key => $data){
                     $htmlHead .= '<th>' . $key . '</th>';
@@ -101,6 +99,33 @@ final class PanelController{
             $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
 
             echo json_encode($ARRAY);
+        }
+    }
+
+    public function getTableNameAction(){
+        if(isset($_POST['getData'])){
+            echo $_POST['name'];
+        }
+    }
+
+    public function editTableNameAction(){
+        if(isset($_POST['newTableName'])){
+            if($this->panel->editTableName($_POST['oldTableName'],$_POST['newTableName'])){
+                $message = "La table '".$_POST['oldTableName']."' a bien été mise à jour";
+            }else{
+                $message = "La table ".$_POST['oldTableName']." n'a pas pu être mise à jour, veuillez réessayer";
+            }
+
+            $databases = $this->panel->getDatabases();
+            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
+            View::render('panel/interface',[
+                'current_database'=>$_SESSION['database'],
+                'message'=>$message,
+                'tables'=>$tables,
+                'databases'=>$databases,
+            ]);
+        }else{
+            header('Location: /panel/interface');
         }
     }
 }

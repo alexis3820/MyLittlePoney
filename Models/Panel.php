@@ -18,7 +18,12 @@ class Panel extends Model
         return $this->query($_SQL_getdata,[]);
     }
 
-    public function getTable($table){
+    public function editTableName($oldTableName,$newTableName): bool
+    {
+        return $this->updateTable($oldTableName,$newTableName);
+    }
+
+    public function getTableContent($table){
         $select = "SELECT * FROM $table";
         return $this->query($select,[]);
     }

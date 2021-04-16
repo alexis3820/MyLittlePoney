@@ -22,6 +22,12 @@ if(isset($view['databases'])){
 if(isset($view['tables'])){
     ?>
     <section>
+        <h1><?php echo $view['current_database']; ?></h1>
+        <?php
+            if(isset($view['message'])){
+        ?>
+        <h2><?php echo $view['message']; ?></h2>
+            <?php }?>
         <table id="table1" class="table table-striped table-bordered">
             <thead>
             <tr>
@@ -54,22 +60,22 @@ if(isset($view['tables'])){
     <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header-view">
                     <h5 class="modal-title" id="exampleModalLabel">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body-view">
                     <table id="editTable" class="table table-striped table-bordered">
                         <thead>
-                            <tr class="DataTr">
-                            </tr>
+                        <tr class="DataTr">
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr class="DataTd">
-                            </tr>
+                        <tr class="DataTd">
+                        </tr>
                         </tbody>
                     </table>
                     <button type="button" class="precButton btn btn-info disabled" >Précédent</button>
@@ -86,13 +92,18 @@ if(isset($view['tables'])){
     <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header-edit">
                     <h5 class="modal-title" id="exampleModalLabel"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body-edit">
+                    <form action="/panel/editTableName" method="post">
+                        <input type="text" id="newTable" name="newTableName">
+                        <input type="text" id="oldTable" name="oldTableName" hidden>
+                        <input type="submit" value="Modifier">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
