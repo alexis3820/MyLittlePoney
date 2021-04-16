@@ -15,13 +15,12 @@ $(document).ready(function() {
          url: '/Panel/myTable',
          type: 'POST',
          data: {
-            getData: true,
+             getData: true,
             name: name
          },
          success:
              function(data){
                 data = $.parseJSON(data);
-                console.log(data);
                 $('.DataTr').html(data.HTMLHEAD);
                 $('.DataTd').html(data.HTMLBODY);
                 $('.modal-title-view').html(name);
@@ -58,22 +57,25 @@ $(document).ready(function() {
 
    $('.Delete').click(function() {
       var name = $(this).attr('id');
+      var result = confirm("Voulez-vous vraiment supprimer la table " + name);
 
-      $.ajax({
-         url: '/Panel/deleteTable',
-         type: 'POST',
-         data: {
-            getDelete: true,
-            name: name
-         },
-         success:
-             function(data){
-                console.log(data);
-             },
-         error:
-             function(){
-                console.log('error AJAX');
-             }
-      })
+      if(result === true) {
+          $.ajax({
+              url: '/Panel/deleteTable',
+              type: 'POST',
+              data: {
+                  getDelete: true,
+                  name: name
+              },
+              success:
+                  function (data) {
+                      console.log(data);
+                  },
+              error:
+                  function () {
+                      console.log('error AJAX');
+                  }
+          })
+      }
    });
 });

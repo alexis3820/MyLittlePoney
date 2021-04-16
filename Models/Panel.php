@@ -30,7 +30,7 @@ class Panel extends Model
 
     public function getColumn($table){
         $select = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$table' ";
-        return $this->query($select,[]);
+        return $this->query($select);
     }
 
 

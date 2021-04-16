@@ -1,6 +1,10 @@
 <?php
 if(isset($view['databases'])){
     ?>
+
+    <div class="alert alert-danger AlertTableDelete" role="alert" style="display: none">
+        Vous avez bien supprimé la table
+    </div>
     <form action="/panel/database" method="post">
         <label for="selected_bdd">Choisir une base de données :</label>
         <select class="form-select mt-1 mb-2" name="selected_bdd">
@@ -58,7 +62,7 @@ if(isset($view['tables'])){
 
     <!-- Modal -->
     <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-xl">
             <div class="modal-content">
                 <div class="modal-header-view">
                     <h5 class="modal-title" id="exampleModalLabel">

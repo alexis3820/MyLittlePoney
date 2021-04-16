@@ -84,19 +84,37 @@ final class PanelController{
     public function myTableAction(){
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
+<<<<<<< Updated upstream
             $sql = $this->panel->getTableContent($table);
             $htmlHead = '';
+=======
+            $sql = $this->panel->getTable($table);
+>>>>>>> Stashed changes
             $htmlBody = '';
 
             foreach($sql as $value){
-                foreach($value as $key => $data){
-                    $htmlHead .= '<th>' . $key . '</th>';
+                var_dump($value);
+                foreach($value as $data){
                     $htmlBody .= '<td>' . $data .'</td>';
                 }
             }
 
-            $ARRAY['HTMLHEAD'] = utf8_encode($htmlHead);
             $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
+
+            echo json_encode($ARRAY);
+        }
+        if(isset($_POST['getColumn'])){
+            $table = $_POST['name'];
+            $sql = $this->panel->getColumn($table);
+            $htmlHead = '';
+
+            foreach($sql as $value){
+                foreach($value as $key => $data){
+                    $htmlHead .= '<th>' . $data . '</th>';
+                }
+            }
+
+            $ARRAY['HTMLHEAD'] = utf8_encode($htmlHead);
 
             echo json_encode($ARRAY);
         }
