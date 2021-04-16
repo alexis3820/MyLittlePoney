@@ -24,7 +24,7 @@ class Panel extends Model
     }
 
     public function getTableContent($table){
-        $select = "SELECT * FROM $table";
+        $select = "SELECT * FROM $table LIMIT 10";
         return $this->query($select,[]);
     }
 

@@ -64,15 +64,15 @@ if(isset($view['tables'])){
     <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-xl">
             <div class="modal-content">
-                <div class="modal-header-view">
-                    <h5 class="modal-title" id="exampleModalLabel">
+                <div class="modal-header">
+                    <h2 class="modal-title-view" id="exampleModalLabel" style="margin-left: 10px">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </h5>
+                    </h2>
                 </div>
                 <div class="modal-body-view">
-                    <table id="editTable" class="table table-striped table-bordered">
+                    <table id="editTable" class="table table-striped table-bordered" style="width: 1300px;">
                         <thead>
                         <tr class="DataTr">
                         </tr>
@@ -80,10 +80,10 @@ if(isset($view['tables'])){
                         <tbody class="DataTd">
                         </tbody>
                     </table>
-                    <button type="button" class="precButton btn btn-info disabled" >Précédent</button>
-                    <button type="button" class="nextButton btn btn-info" >Suivant</button>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="precButton btn btn-info disabled" >Précédent</button>
+                    <button type="button" class="nextButton btn btn-info" >Suivant</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>

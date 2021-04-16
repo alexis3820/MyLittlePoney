@@ -89,7 +89,7 @@ final class PanelController{
 
             foreach($sql as $value){
                 foreach($value as $data){
-                    $htmlBody .= '<td style="width: 50px !important;">' . $data .'</td>';
+                    $htmlBody .= '<td>' . substr($data,0,10) .'</td>';
                 }
                 $htmlBody .= '</tr>';
             }

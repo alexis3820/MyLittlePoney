@@ -7,10 +7,13 @@ $(document).ready(function() {
       }
    });
 
+    $('#modalView').on('show', function() {
+        $(this).removeData('modal');
+    });
+
 
    $('.View').click(function() {
       var name = $(this).attr('id');
-
       $.ajax({
          url: '/Panel/myTable',
          type: 'POST',
@@ -22,14 +25,24 @@ $(document).ready(function() {
          success:
              function(data){
                 data = $.parseJSON(data);
+                 $('.modal-title-view').html(name);
                 $('.DataTr').html(data.HTMLHEAD);
                 $('.DataTd').html(data.HTMLBODY);
-                $('.modal-title-view').html(name);
+                 $('#editTable').dataTable( {
+                     paging: false,
+                     searching: true,
+                     retrieve: true,
+                     bInfo : false,
+                     "language": {
+                         "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                     }
+                 } );
              },
          error:
             function(){
             console.log('error AJAX');
-            }
+            },
+
       })
    });
 
