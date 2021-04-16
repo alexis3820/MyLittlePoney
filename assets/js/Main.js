@@ -16,6 +16,7 @@ $(document).ready(function() {
          type: 'POST',
          data: {
              getData: true,
+             getColumn: true,
             name: name
          },
          success:

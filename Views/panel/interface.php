@@ -77,9 +77,7 @@ if(isset($view['tables'])){
                         <tr class="DataTr">
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr class="DataTd">
-                        </tr>
+                        <tbody class="DataTd">
                         </tbody>
                     </table>
                     <button type="button" class="precButton btn btn-info disabled" >Précédent</button>

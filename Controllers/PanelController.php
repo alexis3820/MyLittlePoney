@@ -85,17 +85,17 @@ final class PanelController{
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
             $sql = $this->panel->getTableContent($table);
-            $htmlBody = '';
+            $htmlBody = '<tr>';
 
             foreach($sql as $value){
                 foreach($value as $data){
-                    $htmlBody .= '<td>' . $data .'</td>';
+                    $htmlBody .= '<td style="width: 50px !important;">' . $data .'</td>';
                 }
+                $htmlBody .= '</tr>';
             }
 
             $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
 
-            echo json_encode($ARRAY);
         }
 
         if(isset($_POST['getColumn'])){
@@ -111,8 +111,8 @@ final class PanelController{
 
             $ARRAY['HTMLHEAD'] = utf8_encode($htmlHead);
 
-            echo json_encode($ARRAY);
         }
+        echo json_encode($ARRAY);
     }
 
     public function getTableNameAction(){
