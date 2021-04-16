@@ -194,7 +194,6 @@ $tables[] = "CREATE TABLE `Publicite` (
 // create ArticlePrincipaux
 $tables[] = "CREATE TABLE `ArticlePrincipaux` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `articlePrincipaux_id` int,
   `articleDivers` varchar(255),
   `PrevisionMeteo` varchar(255),
   `journal_id` int
