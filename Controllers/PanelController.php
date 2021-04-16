@@ -176,7 +176,20 @@ final class PanelController{
             $table = $_POST['table'];
             unset($_POST['submit-data-change']);
             unset($_POST['table']);
-            $this->panel->updateDataTable($table,$_POST);
+            if($this->panel->updateDataTable($table,$_POST)){
+                $message = 'Les données ont bien été modifiés !';
+            }else{
+                $message = 'Les données n\'ont pas pu être modifiés !';
+            }
+
+            $databases = $this->panel->getDatabases();
+            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
+            View::render('panel/interface',[
+                'current_database'=>$_SESSION['database'],
+                'message'=>$message,
+                'tables'=>$tables,
+                'databases'=>$databases,
+            ]);
         }
     }
 }

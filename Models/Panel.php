@@ -43,10 +43,30 @@ class Panel extends Model
         return $this->query($delete,[]);
     }
 
-    public function updateDataTable($table,$data){
+    public function updateDataTable($table,$data): bool
+    {
+        $update = '';
+        $nbElements = count($data);
+        $count = 0;
         foreach ($data as $key=>$value){
-            $update .= $key.' = '.$value;
+            $count++;
+            if($count === $nbElements){
+                $update .= $key." = '".$value."';";
+            }else{
+                $update .= $key." = '".$value."',";
+            }
+
         }
-        $_SQL_getdata = "UPDATE $table SET nom_colonne_1 = 'nouvelle valeur'";
+
+        try{
+            $_SQL_updateData = "UPDATE $table SET $update";
+            $query = $this->db->prepare($_SQL_updateData);
+            $query->execute();
+            return true;
+        }catch(Exception $e){
+            echo $e->getMessage();
+            return false;
+        }
+
     }
 }
