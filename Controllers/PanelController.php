@@ -85,16 +85,20 @@ final class PanelController{
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
             $sql = $this->panel->getTable($table);
-            $TEST = '';
+            $htmlHead = '';
+            $htmlBody = '';
 
+            var_dump($sql);
+            die();
             foreach($sql as $value){
-                foreach($value as $data => $key){
-                    $TEST .= '<div>Mes colonnes : '. $key .'</div>';
-                    $TEST .= '<div>Mes data : ' . $data .'</div>';
+                foreach($value as $key => $data){
+                    $htmlHead .= '<th>' . $key . '</th>';
+                    $htmlBody .= '<td>' . $data .'</td>';
                 }
             }
 
-            $ARRAY['JSONTEST'] = utf8_encode($TEST);
+            $ARRAY['HTMLHEAD'] = utf8_encode($htmlHead);
+            $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
 
             echo json_encode($ARRAY);
         }

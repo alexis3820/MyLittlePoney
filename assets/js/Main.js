@@ -7,6 +7,7 @@ $(document).ready(function() {
       }
    });
 
+
    $('.View').click(function() {
       var name = $(this).attr('id');
 
@@ -20,7 +21,9 @@ $(document).ready(function() {
          success:
              function(data){
                 data = $.parseJSON(data);
-                $('.modal-body').html(data.JSONTEST);
+                console.log(data);
+                $('.DataTr').html(data.HTMLHEAD);
+                $('.DataTd').html(data.HTMLBODY);
                 $('.modal-title').html(name);
              },
          error:

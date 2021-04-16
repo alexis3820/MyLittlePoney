@@ -23,6 +23,12 @@ class Panel extends Model
         return $this->query($select,[]);
     }
 
+    public function getColumn($table){
+        $select = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$table' ";
+        return $this->query($select,[]);
+    }
+
+
     public function getDelete($table){
         $delete = "DROP TABLE $table";
         return $this->query($delete,[]);

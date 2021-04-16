@@ -55,12 +55,25 @@ if(isset($view['tables'])){
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </h5>
                 </div>
                 <div class="modal-body">
+                    <table id="editTable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr class="DataTr">
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="DataTd">
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="precButton btn btn-info disabled" >Précédent</button>
+                    <button type="button" class="nextButton btn btn-info" >Suivant</button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
