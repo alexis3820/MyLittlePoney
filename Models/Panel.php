@@ -28,14 +28,25 @@ class Panel extends Model
         return $this->query($select,[]);
     }
 
+    public function getDataById($table,$id){
+        $_SQL_getdata = "SELECT * FROM $table WHERE id = $id";
+        return $this->query($_SQL_getdata,[]);
+    }
+
     public function getColumn($table){
         $select = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$table' ";
         return $this->query($select);
     }
 
-
     public function getDelete($table){
         $delete = "DROP TABLE $table";
         return $this->query($delete,[]);
+    }
+
+    public function updateDataTable($table,$data){
+        foreach ($data as $key=>$value){
+            $update .= $key.' = '.$value;
+        }
+        $_SQL_getdata = "UPDATE $table SET nom_colonne_1 = 'nouvelle valeur'";
     }
 }

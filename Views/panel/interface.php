@@ -115,6 +115,28 @@ if(isset($view['tables'])){
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalEditData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header-edit">
+                    <h5 class="modal-title" id="exampleModalLabel"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body-edit">
+                    <form action="/panel/updateDataTable" method="post" id="form-edit-data">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?php
 }
 ?>

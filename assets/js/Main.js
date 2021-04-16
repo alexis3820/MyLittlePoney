@@ -93,4 +93,56 @@ $(document).ready(function() {
           })
       }
    });
+
+    $('body').delegate('.EditData','click',function (){
+        var id = $(this).attr('id');
+        var table = $(this).attr('mytable');
+        $.ajax({
+            url: '/Panel/getDataFromTable',
+            type: 'POST',
+            data: {
+                getData: true,
+                getColumn: true,
+                id: id,
+                table: table
+            },
+            success:
+                function (data) {
+                    data = $.parseJSON(data);
+                    console.log(data);
+                    $('#form-edit-data').html(data);
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
+
+        })
+    })
+
+    $('body').delegate('.EditData','click',function (){
+        var id = $(this).attr('id');
+        var table = $(this).attr('mytable');
+        $.ajax({
+            url: '/Panel/getDataFromTable',
+            type: 'POST',
+            data: {
+                getData: true,
+                getColumn: true,
+                id: id,
+                table: table
+            },
+            success:
+                function (data) {
+                    data = $.parseJSON(data);
+                    console.log(data);
+                    $('#form-edit-data').html(data);
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
+
+        })
+    })
 });

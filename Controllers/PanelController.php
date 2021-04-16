@@ -91,10 +91,13 @@ final class PanelController{
             $htmlBody = '<tr>';
 
             foreach($sql as $value){
+                $id = null;
                 foreach($value as $data){
                     $htmlBody .= '<td>' . substr($data,0,10) .'</td>';
+                    $id = $value['id'];
                 }
-                $htmlBody .= '</tr>';
+                $htmlBody .= '<td><button type="button" id="'.$id.'" mytable="'.$table.'" class="EditData btn btn-warning glyphicon glyphicon-pencil btn-xs" data-toggle="modal" data-target="#modalEditData"></button>
+                                <button type="button" id="'.$id.'" class="DeleteData btn btn-danger glyphicon glyphicon-remove btn-xs"></button></td></tr>';
             }
 
             $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
@@ -110,7 +113,10 @@ final class PanelController{
                 foreach($value as $key => $data){
                     $htmlHead .= '<th>' . $data . '</th>';
                 }
+
+
             }
+            $htmlHead .= '<th>Gestion</th>';
 
             $ARRAY['HTMLHEAD'] = utf8_encode($htmlHead);
 
@@ -142,6 +148,35 @@ final class PanelController{
             ]);
         }else{
             header('Location: /panel/interface');
+        }
+    }
+
+    public function getDataFromTableAction(){
+        if(isset($_POST['getData'])) {
+            $response = $this->panel->getDataById($_POST['table'],$_POST['id']);
+            $html = '';
+            foreach ($response[0] as $key=>$value){
+                if($key === 'id'){
+                    continue;
+                }else {
+                    $html .= '<label for="'.$key.'">'.$key.'</label><input type="text" name="'.$key.'" value="'.$value.'">';
+                }
+
+            }
+
+            $html .= '<input type="text" name="table" value="'.$_POST['table'].'" hidden>';
+            $html .= '<input type="submit" name="submit-data-change" value="Modifier">';
+
+            echo json_encode(utf8_encode($html));
+        }
+    }
+
+    public function updateDataTableAction(){
+        if($_POST['submit-data-change']){
+            $table = $_POST['table'];
+            unset($_POST['submit-data-change']);
+            unset($_POST['table']);
+            $this->panel->updateDataTable($table,$_POST);
         }
     }
 }
