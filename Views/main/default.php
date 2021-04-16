@@ -1,1 +1,2 @@
-<h1>Ceci est le contenu par defaut quand une page n'est pas trouvée !</h1>
+<h1>Bienvenue !</h1>
+<img src="../assets/img/logo-MLP.png" alt="logo">
