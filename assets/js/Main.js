@@ -11,41 +11,40 @@ $(document).ready(function() {
         $(this).removeData('modal');
     });
 
-
-   $('.View').click(function() {
-      var name = $(this).attr('id');
-      $.ajax({
-         url: '/Panel/myTable',
-         type: 'POST',
-         data: {
-             getData: true,
-             getColumn: true,
-            name: name
-         },
-         success:
-             function(data){
-                data = $.parseJSON(data);
-                 $('.modal-title-view').html(name);
-                $('.DataTr').html(data.HTMLHEAD);
-                $('.DataTd').html(data.HTMLBODY);
-                $('.ButtonClass').html(data.NEXTBUTTON);
-                 $('#editTable').dataTable( {
-                     paging: false,
-                     searching: true,
-                     retrieve: true,
-                     bInfo : false,
-                     "language": {
-                         "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
-                     }
-                 } );
-             },
-         error:
-            function(){
-            console.log('error AJAX');
+    $('.View').click(function () {
+        var name = $(this).attr('id');
+        $.ajax({
+            url: '/Panel/myTable',
+            type: 'POST',
+            data: {
+                getData: true,
+                getColumn: true,
+                name: name
             },
+            success:
+                function (data) {
+                    data = $.parseJSON(data);
+                    $('.modal-title-view').html(name);
+                    $('.DataTr').html(data.HTMLHEAD);
+                    $('.DataTd').html(data.HTMLBODY);
+                    $('.ButtonClass').html(data.NEXTBUTTON);
+                    $('#editTable').dataTable({
+                        paging: false,
+                        searching: true,
+                        retrieve: true,
+                        bInfo: false,
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        }
+                    });
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
 
-      })
-   });
+        })
+    });
 
    $('.Edit').click(function() {
       var name = $(this).attr('id');
@@ -145,4 +144,33 @@ $(document).ready(function() {
 
         })
     })
+
+    $('body').delegate('.DeleteData','click',function () {
+        var id = $(this).attr('id');
+        var table = $(this).attr('mytable');
+
+        var result = confirm("Voulez-vous vraiment supprimer l'id n°" + id);
+
+        if(result === true) {
+        $.ajax({
+            url: '/Panel/deleteLine',
+            type: 'POST',
+            data: {
+                getDeleteLine: true,
+                id: id,
+                table: table
+            },
+            success:
+                function (data) {
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
+
+        })
+    }
+        $('#modalEdit').modal('hide');
+    })
+
 });

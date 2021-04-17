@@ -69,4 +69,10 @@ class Panel extends Model
         }
 
     }
+
+    public function getDeleteLine($table, $id){
+        $delete = "DELETE FROM $table WHERE id = $id";
+        return $this->query($delete,[]);
+    }
+
 }

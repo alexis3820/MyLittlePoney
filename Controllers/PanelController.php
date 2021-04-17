@@ -97,7 +97,7 @@ final class PanelController{
                     $id = $value['id'];
                 }
                 $htmlBody .= '<td><button type="button" id="'.$id.'" mytable="'.$table.'" class="EditData btn btn-warning glyphicon glyphicon-pencil btn-xs" data-toggle="modal" data-target="#modalEditData"></button>
-                                <button type="button" id="'.$id.'" class="DeleteData btn btn-danger glyphicon glyphicon-remove btn-xs"></button></td></tr>';
+                                <button type="button" id="'.$id.'" mytable="'.$table.'" class="DeleteData btn btn-danger glyphicon glyphicon-remove btn-xs"></button></td></tr>';
             }
 
             $ARRAY['HTMLBODY'] = utf8_encode($htmlBody);
@@ -190,6 +190,15 @@ final class PanelController{
                 'tables'=>$tables,
                 'databases'=>$databases,
             ]);
+        }
+    }
+
+
+    public function deleteLineAction(){
+        if(isset($_POST['getDeleteLine'])){
+            $table = $_POST['table'];
+            $id = $_POST['id'];
+            $sql = $this->panel->getDeleteLine($table, $id);
         }
     }
 }
