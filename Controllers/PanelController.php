@@ -157,7 +157,7 @@ final class PanelController{
             $html = '';
             foreach ($response[0] as $key=>$value){
                 if($key === 'id'){
-                    continue;
+                    $html .= '<input type="text" name="'.$key.'" value="'.$value.'" hidden>';
                 }else {
                     $html .= '<label for="'.$key.'">'.$key.'</label><input type="text" name="'.$key.'" value="'.$value.'">';
                 }

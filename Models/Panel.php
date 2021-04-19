@@ -46,12 +46,19 @@ class Panel extends Model
     public function updateDataTable($table,$data): bool
     {
         $update = '';
+        $id = '';
         $nbElements = count($data);
         $count = 0;
         foreach ($data as $key=>$value){
             $count++;
+
+            if('id' === $key){
+                $id = $value;
+                continue;
+            }
+
             if($count === $nbElements){
-                $update .= $key." = '".$value."';";
+                $update .= $key." = '".$value."'";
             }else{
                 $update .= $key." = '".$value."',";
             }
@@ -59,7 +66,7 @@ class Panel extends Model
         }
 
         try{
-            $_SQL_updateData = "UPDATE $table SET $update";
+            $_SQL_updateData = "UPDATE $table SET $update WHERE id = $id";
             $query = $this->db->prepare($_SQL_updateData);
             $query->execute();
             return true;
