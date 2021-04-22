@@ -14,7 +14,7 @@ $users[] = "GRANT ALL PRIVILEGES ON $_S_dbname.* TO super_admin
 IDENTIFIED BY '".$salt."super_admin';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT GRANT OPTION ON mysql.User TO admin_privileges 
+$users[] = "GRANT GRANT OPTION ON mysql.user TO admin_privileges 
 IDENTIFIED BY '".$salt."admin_privileges';
 FLUSH PRIVILEGES;";
 
