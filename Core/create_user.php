@@ -14,7 +14,7 @@ $users[] = "GRANT ALL PRIVILEGES ON $_S_dbname.* TO super_admin
 IDENTIFIED BY '".$salt."super_admin';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT GRANT OPTION ON mysql.user TO admin_privileges 
+$users[] = "GRANT GRANT OPTION ON mysql.User TO admin_privileges 
 IDENTIFIED BY '".$salt."admin_privileges';
 FLUSH PRIVILEGES;";
 
@@ -30,27 +30,27 @@ $users[] = "GRANT SELECT, INSERT, UPDATE, DELETE ON $_S_dbname.* TO developpeur
 IDENTIFIED BY '".$salt."developpeur';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT UPDATE, DELETE ON TABLE $_S_dbname.joueur TO moderateur 
+$users[] = "GRANT UPDATE, DELETE ON TABLE $_S_dbname.Joueur TO moderateur 
 IDENTIFIED BY '".$salt."moderateur';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT SELECT, UPDATE ON TABLE $_S_dbname.cheval TO specialiste 
+$users[] = "GRANT SELECT, UPDATE ON TABLE $_S_dbname.Cheval TO specialiste 
 IDENTIFIED BY '".$salt."specialiste';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE $_S_dbname.concours TO admin_concours
+$users[] = "GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE $_S_dbname.Concours TO admin_concours
 IDENTIFIED BY '".$salt."admin_concours';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE $_S_dbname.journal TO editorialiste
+$users[] = "GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE $_S_dbname.Journal TO editorialiste
 IDENTIFIED BY '".$salt."editorialiste';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT SELECT ON TABLE $_S_dbname.concours TO client 
+$users[] = "GRANT SELECT ON TABLE $_S_dbname.Concours TO client 
 IDENTIFIED BY '".$salt."client';
 FLUSH PRIVILEGES;";
 
-$users[] = "GRANT SELECT ON TABLE $_S_dbname.journal TO client 
+$users[] = "GRANT SELECT ON TABLE $_S_dbname.Journal TO client 
 IDENTIFIED BY '".$salt."client';
 FLUSH PRIVILEGES;";
 
