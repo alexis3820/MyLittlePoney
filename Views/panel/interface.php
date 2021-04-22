@@ -83,7 +83,9 @@ if(isset($view['tables'])){
                 </div>
                 <div class="modal-footer">
                     <div class="ButtonClass">
-
+                    </div>
+                    <br>
+                    <div class="nbTable">
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>

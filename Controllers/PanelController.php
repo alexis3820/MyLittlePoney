@@ -84,9 +84,11 @@ final class PanelController{
     public function myTableAction(){
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
-            $sql = $this->panel->getTableContent($table);
-            $Button = '<button table="'.$table.'" type="button" class="precButton btn btn-info disabled" >Précédent</button>
-                           <button table="'.$table.'" type="button" class="nextButton btn btn-info" >Suivant</button>';
+            $firstSQL = $_POST['firstSQL'];
+            $secondSQL = $_POST['secondSQL'];
+            $sql = $this->panel->getTableContent($table, $firstSQL, $secondSQL);
+            $Button = '<button id="'.$table.'" type="button" class="precButton btn btn-info" >Precedent</button>
+                           <button id="'.$table.'" type="button" class="nextButton btn btn-info" >Suivant</button>';
             $ARRAY['NEXTBUTTON'] = utf8_encode($Button);
             $htmlBody = '<tr>';
 

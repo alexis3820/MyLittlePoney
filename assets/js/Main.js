@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
-   $('#table1').DataTable({
+
+    var firstSQL = 0;
+    var secondSQL = 10;
+
+    $('#table1').DataTable({
       paging: false,
       "language": {
          "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
@@ -12,6 +16,7 @@ $(document).ready(function() {
     });
 
     $('.View').click(function () {
+
         var name = $(this).attr('id');
         $.ajax({
             url: '/Panel/myTable',
@@ -19,7 +24,9 @@ $(document).ready(function() {
             data: {
                 getData: true,
                 getColumn: true,
-                name: name
+                name: name,
+                firstSQL: firstSQL,
+                secondSQL: secondSQL
             },
             success:
                 function (data) {
@@ -28,6 +35,8 @@ $(document).ready(function() {
                     $('.DataTr').html(data.HTMLHEAD);
                     $('.DataTd').html(data.HTMLBODY);
                     $('.ButtonClass').html(data.NEXTBUTTON);
+                    $('.nbTable').html(data.NUMBER);
+                    $('.precButton').addClass('disabled');
                     $('#editTable').dataTable({
                         paging: false,
                         searching: true,
@@ -172,5 +181,103 @@ $(document).ready(function() {
     }
         $('#modalEdit').modal('hide');
     })
+
+    $('body').delegate('.nextButton','click',function () {
+
+        $('.DataTr').html('');
+        $('.DataTd').html('');
+
+        var name = $(this).attr('id');
+        firstSQL += 10;
+        secondSQL += 10;
+        if(secondSQL > 10){
+            $('.precButton').removeClass('disabled');
+        }else{
+            $('.precButton').addClass('disabled');
+        }
+
+        $.ajax({
+            url: '/Panel/myTable',
+            type: 'POST',
+            data: {
+                getData: true,
+                getColumn: true,
+                name: name,
+                firstSQL: firstSQL,
+                secondSQL: secondSQL
+            },
+            success:
+                function (data) {
+                    data = $.parseJSON(data);
+                    $('.DataTr').html(data.HTMLHEAD);
+                    $('.DataTd').html(data.HTMLBODY);
+                    $('#editTable').dataTable({
+                        paging: false,
+                        searching: true,
+                        retrieve: true,
+                        bInfo: false,
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        }
+                    });
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
+
+        })
+    })
+    $('body').delegate('.precButton','click',function () {
+
+        var name = $(this).attr('id');
+
+        $('.DataTr').html('');
+        $('.DataTd').html('');
+
+        firstSQL -= 10;
+        secondSQL -= 10;
+        if(secondSQL > 10){
+            $('.precButton').removeClass('disabled');
+        }else{
+            $('.precButton').addClass('disabled');
+        }
+
+        $.ajax({
+            url: '/Panel/myTable',
+            type: 'POST',
+            data: {
+                getData: true,
+                getColumn: true,
+                name: name,
+                firstSQL: firstSQL,
+                secondSQL: secondSQL
+            },
+            success:
+                function (data) {
+                    data = $.parseJSON(data);
+                    $('.DataTr').html(data.HTMLHEAD);
+                    $('.DataTd').html(data.HTMLBODY);
+                    $('#editTable').dataTable({
+                        paging: false,
+                        searching: true,
+                        retrieve: true,
+                        bInfo: false,
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        }
+                    });
+                },
+            error:
+                function () {
+                    console.log('error AJAX');
+                },
+
+        })
+    })
+
+
+
+
 
 });

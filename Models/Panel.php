@@ -23,8 +23,8 @@ class Panel extends Model
         return $this->updateTable($oldTableName,$newTableName);
     }
 
-    public function getTableContent($table){
-        $select = "SELECT * FROM $table LIMIT 10";
+    public function getTableContent($table, $firstSQL, $secondSQL){
+        $select = "SELECT * FROM $table LIMIT $firstSQL,$secondSQL";
         return $this->query($select,[]);
     }
 
