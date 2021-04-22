@@ -15,7 +15,9 @@ class Db extends PDO
             //show error
             $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
-            die($e->getMessage());
+            echo 'Impossible de continuer ici, veuillez vérifier vos informations d\'accès !';
+            echo '</br><a href="/">Retourner a l\'accueil</a>';
+            die;
         }
     }
 
