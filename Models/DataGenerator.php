@@ -76,17 +76,16 @@ class DataGenerator
 
     private function _ArticlePrincipaux()
     {
-        $articlePrincipaux_id = rand(1, 100000);
         $articleDivers = $this->randomChars(rand(10, 20));
         $previsionMeteo = $this->randomChars(rand(10, 20));
         $journal_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `articleprincipaux`(`articlePrincipaux_id`, `articleDivers`, `PrevisionMeteo`, `journal_id`) 
-                    VALUES (?,?,?,?)';
+        $insertData = 'INSERT INTO `articleprincipaux`(`articleDivers`, `PrevisionMeteo`, `journal_id`) 
+                    VALUES (?,?,?)';
 
         $query = $this->db->prepare($insertData);
 
-        $query->execute([$articlePrincipaux_id, $articleDivers, $previsionMeteo, $journal_id]);
+        $query->execute([$articleDivers, $previsionMeteo, $journal_id]);
     }
 
 
@@ -125,12 +124,6 @@ class DataGenerator
         $nom = $this->randomChars(rand(10, 20));
         $race = $this->randomChars(rand(10, 20));
         $description = $this->randomChars(rand(10, 200));
-        $resistance = rand(1,20);
-        $endurance = rand(1,20);
-        $detente = rand(1,20);
-        $vitesse = rand(1,20);
-        $sociabilite = rand(1,20);
-        $tinyintelligence = rand(1,20);
         $temperament = $this->randomChars(rand(10, 20));
         $sante = rand(1,20);
         $moral = rand(1,20);
@@ -143,15 +136,14 @@ class DataGenerator
         $etatGeneral = rand(1,20);
         $joueur_id = rand(1, 1000000);
 
-        $insertData = 'INSERT INTO `cheval`(`nom`, `race`, `description`, `resistance`, `endurance`, `detente`, `vitesse`,
-                     `sociabilite`, `tinyintelligence`, `temperament`, `sante`, `moral`, `stress`, `fatigue`, `faim`,
-                     `proprete`, `experience`, `niveau`, `etatGeneral`, `joueur_id`) 
-                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        $insertData = 'INSERT INTO `cheval`(`nom`, `race`, `description`, `temperament`, `sante`, `moral`, `stress`, 
+                     `fatigue`, `faim`, `proprete`, `experience`, `niveau`, `etatGeneral`, `joueur_id`) 
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
 
-        $query->execute([$nom, $race, $description, $resistance, $endurance, $detente, $vitesse, $sociabilite, $tinyintelligence,
-            $temperament, $sante, $moral, $stress, $fatigue, $faim, $proprete, $experience, $niveau, $etatGeneral, $joueur_id]);
+        $query->execute([$nom, $race, $description, $temperament, $sante, $moral, $stress, $fatigue, $faim, $proprete,
+            $experience, $niveau, $etatGeneral, $joueur_id]);
     }
 
 
