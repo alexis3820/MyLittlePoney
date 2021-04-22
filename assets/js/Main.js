@@ -2,7 +2,6 @@ $(document).ready(function() {
 
 
     var firstSQL = 0;
-    var secondSQL = 10;
 
     $('#table1').DataTable({
       paging: false,
@@ -25,8 +24,7 @@ $(document).ready(function() {
                 getData: true,
                 getColumn: true,
                 name: name,
-                firstSQL: firstSQL,
-                secondSQL: secondSQL
+                firstSQL: firstSQL
             },
             success:
                 function (data) {
@@ -184,13 +182,12 @@ $(document).ready(function() {
 
     $('body').delegate('.nextButton','click',function () {
 
-        $('.DataTr').html('');
-        $('.DataTd').html('');
+        $('.DataTr').val('');
+        $('.DataTd').val('');
 
         var name = $(this).attr('id');
         firstSQL += 10;
-        secondSQL += 10;
-        if(secondSQL > 10){
+        if(firstSQL >= 10){
             $('.precButton').removeClass('disabled');
         }else{
             $('.precButton').addClass('disabled');
@@ -203,8 +200,7 @@ $(document).ready(function() {
                 getData: true,
                 getColumn: true,
                 name: name,
-                firstSQL: firstSQL,
-                secondSQL: secondSQL
+                firstSQL: firstSQL
             },
             success:
                 function (data) {
@@ -236,8 +232,7 @@ $(document).ready(function() {
         $('.DataTd').html('');
 
         firstSQL -= 10;
-        secondSQL -= 10;
-        if(secondSQL > 10){
+        if(firstSQL >= 10){
             $('.precButton').removeClass('disabled');
         }else{
             $('.precButton').addClass('disabled');
@@ -250,8 +245,7 @@ $(document).ready(function() {
                 getData: true,
                 getColumn: true,
                 name: name,
-                firstSQL: firstSQL,
-                secondSQL: secondSQL
+                firstSQL: firstSQL
             },
             success:
                 function (data) {

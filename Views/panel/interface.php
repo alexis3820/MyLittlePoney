@@ -72,6 +72,7 @@ if(isset($view['tables'])){
                     </h2>
                 </div>
                 <div class="modal-body-view">
+                    <br>
                     <table id="editTable" class="table table-striped table-bordered" style="width: 1300px;">
                         <thead>
                         <tr class="DataTr">
@@ -80,6 +81,7 @@ if(isset($view['tables'])){
                         <tbody class="DataTd">
                         </tbody>
                     </table>
+                    <br>
                 </div>
                 <div class="modal-footer">
                     <div class="ButtonClass">
