@@ -65,7 +65,7 @@ class DataGenerator
         $nomJoueur = $this->randomChars(rand(10, 20));
         $journal_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `actualite`(`libelle`, `nomJoueur`, `journal_id`) 
+        $insertData = 'INSERT INTO `Actualite`(`libelle`, `nomJoueur`, `journal_id`) 
                     VALUES (?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -80,7 +80,7 @@ class DataGenerator
         $previsionMeteo = $this->randomChars(rand(10, 20));
         $journal_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `articleprincipaux`(`articleDivers`, `PrevisionMeteo`, `journal_id`) 
+        $insertData = 'INSERT INTO `Articleprincipaux`(`articleDivers`, `PrevisionMeteo`, `journal_id`) 
                     VALUES (?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -94,7 +94,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $cheval_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `blessure`(`libelle`, `cheval_id`)
+        $insertData = 'INSERT INTO `Blessure`(`libelle`, `cheval_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -110,7 +110,7 @@ class DataGenerator
         $capaciteAccueilChevaux = rand(1,20);
         $type_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `capacite`(`libelle`, `capaciteAccueilItem`, `capaciteAccueilChevaux`, `type_id`)
+        $insertData = 'INSERT INTO `Capacite`(`libelle`, `capaciteAccueilItem`, `capaciteAccueilChevaux`, `type_id`)
                     VALUES (?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -136,7 +136,7 @@ class DataGenerator
         $etatGeneral = rand(1,20);
         $joueur_id = rand(1, 1000000);
 
-        $insertData = 'INSERT INTO `cheval`(`nom`, `race`, `description`, `temperament`, `sante`, `moral`, `stress`, 
+        $insertData = 'INSERT INTO `Cheval`(`nom`, `race`, `description`, `temperament`, `sante`, `moral`, `stress`, 
                      `fatigue`, `faim`, `proprete`, `experience`, `niveau`, `etatGeneral`, `joueur_id`) 
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
@@ -152,7 +152,7 @@ class DataGenerator
         $capaciteAccueil = rand(1,20);
         $joueur_id = rand(1, 1000000);
 
-        $insertData = 'INSERT INTO `clubhippique`(`capaciteAccueil`, `joueur_id`)
+        $insertData = 'INSERT INTO `Clubhippique`(`capaciteAccueil`, `joueur_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -166,7 +166,7 @@ class DataGenerator
         $argent = rand(1,20);
         $joueur_id = rand(1, 1000000);
 
-        $insertData = 'INSERT INTO `comptebanquaire`(`argent`, `joueur_id`) 
+        $insertData = 'INSERT INTO `Comptebanquaire`(`argent`, `joueur_id`) 
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -182,7 +182,7 @@ class DataGenerator
         $dateFin = date("Y-m-d");
         $clubHippique_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `concours`(`infrastructureTypeCarriere`, `dateDebut`, `dateFin`, `clubHippique_id`)
+        $insertData = 'INSERT INTO `Concours`(`infrastructureTypeCarriere`, `dateDebut`, `dateFin`, `clubHippique_id`)
                     VALUES (?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -196,7 +196,7 @@ class DataGenerator
         $capaciteAccueil = rand(1,20);
         $joueur_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `ecurie`(`capaciteAccueil`, `joueur_id`)
+        $insertData = 'INSERT INTO `Ecurie`(`capaciteAccueil`, `joueur_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -210,7 +210,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $item_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `famille`(`libelle`, `Item_id`) 
+        $insertData = 'INSERT INTO `Famille`(`libelle`, `Item_id`) 
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -230,7 +230,7 @@ class DataGenerator
         $ecurie_id = rand(1, 100000);
         $clubHippique_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `infrastructure`(`type`, `niveau`, `description`, `familleInfrastructure`, `prix`,
+        $insertData = 'INSERT INTO `Infrastructure`(`type`, `niveau`, `description`, `familleInfrastructure`, `prix`,
                      `consommationRessources`, `ecurie_id`, `clubHippique_id`)
                     VALUES (?,?,?,?,?,?,?,?)';
 
@@ -250,7 +250,7 @@ class DataGenerator
         $infrastructure_id = rand(1, 100000);
         $concours_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `item`(`type`, `niveau`, `description`, `prix`, `cheval_id`, `infrastructure_id`, `concours_id`) 
+        $insertData = 'INSERT INTO `Item`(`type`, `niveau`, `description`, `prix`, `cheval_id`, `infrastructure_id`, `concours_id`) 
                     VALUES (?,?,?,?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -277,7 +277,7 @@ class DataGenerator
         $dateHeureInscription = date("Y-m-d H:i:s");
         $dateHeureDerniereConnexion = date("Y-m-d H:i:s");
 
-        $insertData = 'INSERT INTO `joueur`(`pseudonyme`, `email`, `mdp`, `prenom`, `nom`, `sexe`, `dateDeNaissance`,
+        $insertData = 'INSERT INTO `Joueur`(`pseudonyme`, `email`, `mdp`, `prenom`, `nom`, `sexe`, `dateDeNaissance`,
                      `telephone`, `adressePostale`, `cheminAvatar`, `description`, `adresseSiteWeb`, `adresseIp`,
                      `dateHeureInscription`, `dateHeureDerniereConnexion`) 
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
@@ -296,7 +296,7 @@ class DataGenerator
         $previsionMeteo = $this->randomChars(rand(10, 20));
         $articlePrincipaux_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `journal`(`dateJour`, `agendaEvenement`, `previsionMeteo`, `articlePrincipaux_id`)
+        $insertData = 'INSERT INTO `Journal`(`dateJour`, `agendaEvenement`, `previsionMeteo`, `articlePrincipaux_id`)
                     VALUES (?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -310,7 +310,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $cheval_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `maladie`(`libelle`, `cheval_id`)
+        $insertData = 'INSERT INTO `Maladie`(`libelle`, `cheval_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -324,7 +324,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $cheval_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `parasite`(`libelle`, `cheval_id`) 
+        $insertData = 'INSERT INTO `Parasite`(`libelle`, `cheval_id`) 
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -338,7 +338,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $journal_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `pointsclefs`(`libelle`, `journal_id`)
+        $insertData = 'INSERT INTO `Pointsclefs`(`libelle`, `journal_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -352,7 +352,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $journal_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `publicite`(`libelle`, `journal_id`)
+        $insertData = 'INSERT INTO `Publicite`(`libelle`, `journal_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -368,7 +368,7 @@ class DataGenerator
         $objet_id = rand(1, 100000);
         $ecurie_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `tacheautomatique`(`actionARealiser`, `FrequenceRealisationAction`, `objet_id`, `ecurie_id`)
+        $insertData = 'INSERT INTO `Tacheautomatique`(`actionARealiser`, `FrequenceRealisationAction`, `objet_id`, `ecurie_id`)
                     VALUES (?,?,?,?)';
 
         $query = $this->db->prepare($insertData);
@@ -382,7 +382,7 @@ class DataGenerator
         $libelle = $this->randomChars(rand(10, 200));
         $compteBanquaire_id = rand(1, 100000);
 
-        $insertData = 'INSERT INTO `transaction`(`libelle`, `CompteBanquaire_id`)
+        $insertData = 'INSERT INTO `Transaction`(`libelle`, `CompteBanquaire_id`)
                     VALUES (?,?)';
 
         $query = $this->db->prepare($insertData);
