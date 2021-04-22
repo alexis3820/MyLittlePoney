@@ -2,7 +2,7 @@
 
 final class Controller
 {
-    private array $url;
+    private $url;
 
     public function __construct ($controller, $action, $options){
         // check if controller is not empty and exist (else default is instantiate)

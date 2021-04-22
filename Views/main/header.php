@@ -14,6 +14,9 @@
                             <a class="nav-link" href="/user/profil" title="Profil">Profil</a>
                         </li>
                         <li class="nav-item ml-2" >
+                            <a class="nav-link" href="/log/show" title="logs">Logs</a>
+                        </li>
+                        <li class="nav-item ml-2" >
                             <a class="nav-link" href="/user/logout" title="Déconnexion">Se déconnecter</a>
                         </li>
                     <?php } else { ?>

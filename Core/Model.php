@@ -2,7 +2,7 @@
 
 class Model
 {
-    protected Db $db;
+    protected $db;
 
     public function __construct($dbname,$user,$password){
         $this->db = new Db($dbname,$user,$password);

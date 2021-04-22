@@ -3,7 +3,7 @@
 final class UserController
 {
     const DB_NAME = 'mysql';
-    private User $user;
+    private $user;
 
     public function __construct(){
         $this->user = new User(self::DB_NAME,'root','');

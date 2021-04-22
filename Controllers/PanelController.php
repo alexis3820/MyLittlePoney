@@ -3,29 +3,26 @@
 final class PanelController{
 
     const DB_NAME = 'mylittleponey';
-    private Panel $panel;
+    private $panel;
+    private $password;
 
     public function __construct(){
-        $password = '';
-        $instantiate = false;
+        $this->password = '';
         if(!empty($_SESSION['password'])){
-            $password = Db::SALT_PASSWORD.$_SESSION['password'];
+            $this->password = Db::SALT_PASSWORD.$_SESSION['password'];
         }
 
         foreach ($_SESSION['databases'] as $database){
             if(self::DB_NAME === $database){
-                $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$password);
-                $instantiate = true;
+                $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$this->password);
                 break;
             }
         }
 
-        if(!$instantiate){
-            if(isset($_SESSION['databases'][0])){
-                $this->panel = new Panel($_SESSION['databases'][0],$_SESSION['id'],$password);
-            }else{
-                $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$password);
-            }
+        if(isset($_SESSION['actualDatabase']) && !empty($_SESSION['actualDatabase'])){
+            $this->panel = new Panel($_SESSION['actualDatabase'],$_SESSION['id'],$this->password);
+        }else{
+            $this->panel = new Panel(self::DB_NAME,$_SESSION['id'],$this->password);
         }
 
     }
@@ -40,15 +37,17 @@ final class PanelController{
     }
 
     public function databaseAction(){
-        if(isset($_SESSION['database']) || isset($_POST['selected_bdd'])){
+        if(isset($_SESSION['actualDatabase']) || isset($_POST['selected_bdd'])){
             if(isset($_POST['selected_bdd'])){
-                $_SESSION['database'] = $_POST['selected_bdd'];
+                $_SESSION['actualDatabase'] = $_POST['selected_bdd'];
+                unset($this->panel);
+                $this->panel = new Panel($_SESSION['actualDatabase'],$_SESSION['id'],$this->password);
             }
 
             $databases = $this->panel->getDatabases();
-            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
+            $tables = $this->panel->getTablesDatabase($_SESSION['actualDatabase']);
             View::render('panel/interface',[
-                'current_database'=>$_SESSION['database'],
+                'current_database'=>$_SESSION['actualDatabase'],
                 'tables'=>$tables,
                 'databases'=>$databases,
             ]);
@@ -64,7 +63,6 @@ final class PanelController{
         if(isset($parameters[0])){
             $parameters[0] = htmlspecialchars($parameters[0]);
             try {
-
                 $columns = $this->panel->getColumns($parameters[0]);
                 View::render('panel/table',['columns'=>$columns]);
             }catch (Exception $e){
@@ -140,9 +138,9 @@ final class PanelController{
             }
 
             $databases = $this->panel->getDatabases();
-            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
+            $tables = $this->panel->getTablesDatabase($_SESSION['actualDatabase']);
             View::render('panel/interface',[
-                'current_database'=>$_SESSION['database'],
+                'current_database'=>$_SESSION['actualDatabase'],
                 'message'=>$message,
                 'tables'=>$tables,
                 'databases'=>$databases,
@@ -184,9 +182,9 @@ final class PanelController{
             }
 
             $databases = $this->panel->getDatabases();
-            $tables = $this->panel->getTablesDatabase($_SESSION['database']);
+            $tables = $this->panel->getTablesDatabase($_SESSION['actualDatabase']);
             View::render('panel/interface',[
-                'current_database'=>$_SESSION['database'],
+                'current_database'=>$_SESSION['actualDatabase'],
                 'message'=>$message,
                 'tables'=>$tables,
                 'databases'=>$databases,
