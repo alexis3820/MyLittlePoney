@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     var firstSQL = 0;
 
+    //création du datatable principal
     $('#table1').DataTable({
       paging: false,
       "language": {
@@ -10,12 +11,13 @@ $(document).ready(function() {
       }
    });
 
+    //On enleve les informations du modal quand on le montre
     $('#modalView').on('show', function() {
         $(this).removeData('modal');
     });
 
+    //Function quand on clique sur le boutton 'View' (bleu)
     $('.View').click(function () {
-
         var name = $(this).attr('id');
         $.ajax({
             url: '/Panel/myTable',
@@ -53,6 +55,7 @@ $(document).ready(function() {
         })
     });
 
+    //Function quand on clique sur le boutton 'Edit' (Jaune)
    $('.Edit').click(function() {
       var name = $(this).attr('id');
 
@@ -75,7 +78,7 @@ $(document).ready(function() {
       })
    });
 
-
+    //Function quand on clique sur le boutton 'Delete' (Rouge)
    $('.Delete').click(function() {
       var name = $(this).attr('id');
       var result = confirm("Voulez-vous vraiment supprimer la table " + name);
@@ -90,6 +93,7 @@ $(document).ready(function() {
               },
               success:
                   function (data) {
+                      document.getElementById("alertDelete").style.display = 'block';
                       console.log(data);
                   },
               error:
@@ -100,6 +104,7 @@ $(document).ready(function() {
       }
    });
 
+    //Function quand on clique sur le boutton 'Edit' (Jaune) dans le modal
     $('body').delegate('.EditData','click',function (){
         var id = $(this).attr('id');
         var table = $(this).attr('mytable');
@@ -152,6 +157,7 @@ $(document).ready(function() {
         })
     })
 
+    //Function quand on clique sur le boutton 'Delete' (Rouge) dans le modal
     $('body').delegate('.DeleteData','click',function () {
         var id = $(this).attr('id');
         var table = $(this).attr('mytable');
@@ -180,6 +186,7 @@ $(document).ready(function() {
         $('#modalEdit').modal('hide');
     })
 
+    //Function quand on clique sur le boutton suivant pour la pagination
     $('body').delegate('.nextButton','click',function () {
 
         $('.DataTr').val('');
@@ -224,6 +231,8 @@ $(document).ready(function() {
 
         })
     })
+
+    //Function quand on clique sur le boutton précedent pour la pagination
     $('body').delegate('.precButton','click',function () {
 
         var name = $(this).attr('id');

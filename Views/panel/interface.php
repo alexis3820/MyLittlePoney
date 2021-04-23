@@ -2,9 +2,7 @@
 if(isset($view['databases'])){
     ?>
 
-    <div class="alert alert-danger AlertTableDelete" role="alert" style="display: none">
-        Vous avez bien supprimé la table
-    </div>
+
     <form action="/panel/database" method="post">
         <label for="selected_bdd">Choisir une base de données :</label>
         <select class="form-select mt-1 mb-2" name="selected_bdd">
@@ -19,6 +17,9 @@ if(isset($view['databases'])){
         </select>
         <input type="submit" name="submit_bdd" value="Choisir">
     </form>
+    <div class="alert alert-danger AlertTableDelete" role="alert" id="alertDelete" style="display:none">
+        Vous avez bien supprimé la table
+    </div>
     <?php
 }
 ?>
@@ -131,7 +132,6 @@ if(isset($view['tables'])){
                 </div>
                 <div class="modal-body-edit">
                     <form action="/panel/updateDataTable" method="post" id="form-edit-data">
-
                     </form>
                 </div>
                 <div class="modal-footer">

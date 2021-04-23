@@ -72,13 +72,19 @@ final class PanelController{
 
     }
 
+    //Envoie la requete de suppresion de table
     public function deleteTableAction(){
         if(isset($_POST['getDelete'])){
             $table = $_POST['name'];
             $sql = $this->panel->getDelete($table);
+
+            $ARRAY['TABLE'] = utf8_encode($table);
+
+            echo json_encode($ARRAY);
         }
     }
 
+    //Affichage des informations du modal 'view' (Bleu)
     public function myTableAction(){
         if(isset($_POST['getData'])){
             $table = $_POST['name'];
@@ -129,6 +135,7 @@ final class PanelController{
         }
     }
 
+    //Affichage des informations de suppresion ou non de la table
     public function editTableNameAction(){
         if(isset($_POST['newTableName'])){
             if($this->panel->editTableName($_POST['oldTableName'],$_POST['newTableName'])){
@@ -150,6 +157,7 @@ final class PanelController{
         }
     }
 
+    //Affichage des informations du modal 'edit' (Jaune)
     public function getDataFromTableAction(){
         if(isset($_POST['getData'])) {
             $response = $this->panel->getDataById($_POST['table'],$_POST['id']);
@@ -170,6 +178,7 @@ final class PanelController{
         }
     }
 
+    //Envoie la requête d'update si modifier Modal 'Edit' (Jaune)
     public function updateDataTableAction(){
         if($_POST['submit-data-change']){
             $table = $_POST['table'];
@@ -192,7 +201,7 @@ final class PanelController{
         }
     }
 
-
+    //Envoie la requête de delete pour la ligne dans le modal (Rouge)
     public function deleteLineAction(){
         if(isset($_POST['getDeleteLine'])){
             $table = $_POST['table'];
