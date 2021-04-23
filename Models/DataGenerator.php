@@ -7,6 +7,10 @@ class DataGenerator
     /*________________________________________________________________________________________________________________*/
     public $db;
     public $success;
+
+    /**
+     * DataGenerator constructor.
+     */
     public function __construct()
     {
         try
@@ -19,6 +23,11 @@ class DataGenerator
         }
     }
 
+    /**
+     * @param $NumberLigne
+     * @return bool
+     * Fonction permettant d'inserer les donnée après sa création.
+     */
     public function _InsertData($NumberLigne)
     {
         $count = 0;
@@ -26,11 +35,13 @@ class DataGenerator
         $objective = $NumberLigne;
         $objectiveJoueur = $objective * 10;
 
+        //la table joueur sera la seule table qui aura 10 fois plus de donnée que les autres tables
         while ($i < $objectiveJoueur) {
             $this->_Joueur();
             $i++;
         }
 
+        //pour chaque table, on crée une fonction associé au nom de la table
         while ($count < $objective) {
             $this->_Actualite();
             $this->_ArticlePrincipaux();
@@ -393,6 +404,11 @@ class DataGenerator
     /*________________________________________________________________________________________________________________*/
     /*________________________________________________________________________________________________________________*/
 
+    /**
+     * @param $length
+     * @return string
+     * génère des caractère aléatoire
+     */
     private function randomChars($length)
     {
         $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -403,6 +419,11 @@ class DataGenerator
         return $string;
     }
 
+    /**
+     * @param int $length
+     * @return string
+     * génère une numéro de DNS aléatoire
+     */
     private function randomDNS($length = 3)
     {
         $chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -413,6 +434,11 @@ class DataGenerator
         return $string;
     }
 
+    /**
+     * @param int $length
+     * @return string
+     * génère une numéro de téléphone aléatoire
+     */
     private function randomPhone($length = 9)
     {
         $numbers = '0123456789';
@@ -423,6 +449,13 @@ class DataGenerator
         return $string;
     }
 
+    /**
+     * @param $start_date
+     * @param $end_date
+     * @param false $datetime
+     * @return false|string
+     * génére une date aléatoire
+     */
     private function randomDate($start_date, $end_date, $datetime = false)
     {
         $min = strtotime($start_date);

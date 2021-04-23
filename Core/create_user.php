@@ -54,6 +54,7 @@ $users[] = "GRANT SELECT ON TABLE $_S_dbname.Journal TO client
 IDENTIFIED BY '".$salt."client';
 FLUSH PRIVILEGES;";
 
+//création des utilisateurs
 $db = new Db($_S_dbname,$_S_username,$_S_password);
 foreach($users as $user){
     try {
@@ -67,7 +68,7 @@ foreach($users as $user){
         echo "User created successfully <br>";
 
     } catch (PDOException $e){
-        echo $e->getMessage() . "<br>";
+        echo "Les utilisateurs sont déjà existant<br>";
     }
 }
 

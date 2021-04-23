@@ -207,9 +207,10 @@ try {
     }
     echo "Database created successfully with the name $_S_dbname <br>";
 } catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage() . "<br>";
+    echo "La base de donnée est déjà existante<br>";
 }
 
+//création des tables
 if($successfull){
     $db = new Db($_S_dbname,$_S_username,$_S_password);
     foreach ($tables as $table){
@@ -224,7 +225,7 @@ if($successfull){
             echo "Table created successfully <br>";
 
         } catch (PDOException $e){
-            echo $e->getMessage() . "<br>";
+            echo "Les tables sont déjà existante<br>";
         }
     }
 

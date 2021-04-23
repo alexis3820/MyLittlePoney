@@ -2,11 +2,17 @@
 
 final class GeneratorController
 {
+    /**
+     * Controlleur de base
+     */
     public function defaultAction()
     {
         View::render('generateBdd/home');
     }
 
+    /**
+     * Fonction permettant d'inserer les donnée après sa création. (createBddAction)
+     */
     public function insertAction()
     {
         $success = false;
@@ -19,6 +25,9 @@ final class GeneratorController
         View::render('generateBdd/home', ['success' => $success, 'res' => $res]);
     }
 
+    /**
+     * Creation de la base de donnée
+     */
     public function createBddAction()
     {
         $success = false;
@@ -26,6 +35,9 @@ final class GeneratorController
         View::render('generateBdd/home', ['success' => $success]);
     }
 
+    /**
+     * création des utilisateurs de la base de donnée
+     */
     public function createUserAction()
     {
         $success = false;
